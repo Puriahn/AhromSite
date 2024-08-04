@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import DropDownSandoq from "./DropDownSandoq";
 import DropDownBishtar from "./DropDownBishtar";
@@ -13,17 +12,17 @@ export default function NavBar() {
           >
             <img
               src="https://ahrominvest.ir/page/assets/images/logo.png"
-              className="h-16"
+              className="h-12 lg:h-16"
               alt="Ahrom Logo"
             />
-            <span className="self-center text-3xl  whitespace-nowrap dark:text-black">
+            <span className="self-center text-xl  whitespace-nowrap dark:text-black lg:text-3xl">
               سرمایه گذاری اهرم
             </span>
           </Link>
           <div className="flex md:order-2 space-x-3 md:space-x-0 ltr:space-x-reverse">
             <button
               type="button"
-              className="text-white bg-emerald-950 hover:bg-emerald-800 font-medium text-lg rounded-2xl px-5 py-2 lg:py-4 text-center dark:focus:ring-blue-800"
+              className="text-white bg-emerald-950 hover:bg-emerald-800 font-medium text-lg rounded-2xl px-5 py-2 lg:py-4 text-center dark:focus:ring-blue-800 hidden sm:flex"
             >
               <Link href="downloadapp">دانلود اپلیکیشن</Link>
             </button>
@@ -57,8 +56,7 @@ export default function NavBar() {
             id="navbar-sticky"
           >
             <ul
-              aria-labelledby="dropdownHoverButton"
-              className=" text-black text-xl flex flex-col p-4 md:p-0 mt-4 font-medium invisible lg:visible rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0  "
+              className=" text-black text-xl flex-col p-4 md:p-0 mt-4 font-medium hidden lg:flex rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0  "
             >
               <li>
                 <Link
