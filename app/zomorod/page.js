@@ -1,3 +1,3 @@
 export default function page(){
-    return(<main> <h1>ssssssssssss</h1></main>);
+    return( <h1 className="mt-32">ssssssssssss</h1>);
 }

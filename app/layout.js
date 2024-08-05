@@ -1,7 +1,17 @@
 import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "@/Components/Navbar/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
+const Yekan = localFont({
+  src: [
+    {
+      path: "../public/Font/BYekan+.ttf",
+      weight: "700",
+    },
+  ],
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +21,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa-IR">
-      <body dir="rtl" className={inter.className}>{children}</body>
+      <body dir="rtl" className={Yekan.className}>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
