@@ -1,6 +1,7 @@
 import Link from "next/link";
 import DropDownSandoq from "./DropDownSandoq";
 import DropDownBishtar from "./DropDownBishtar";
+import ScrollButton from "../Common/ScrollButton";
 export default function NavBar() {
   return (
     <>
@@ -55,9 +56,7 @@ export default function NavBar() {
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-sticky"
           >
-            <ul
-              className=" text-black text-xl flex-col p-4 md:p-0 mt-4 font-medium hidden lg:flex rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0  "
-            >
+            <ul className=" text-black text-xl flex-col p-4 md:p-0 mt-4 font-medium hidden lg:flex rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0  ">
               <li>
                 <Link
                   href="/"
@@ -68,12 +67,12 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#"
-                  className="block py-2 px-3 rounded md:hover:text-zinc-600 md:p-0"
+                <ScrollButton
+                  scroll={2150}
+                  classes="block py-2 px-3 rounded md:hover:text-zinc-600 md:p-0"
                 >
-                  ویژگی ها
-                </Link>
+                 ویژگی ها
+                </ScrollButton>
               </li>
               <li>
                 <Link
@@ -92,9 +91,8 @@ export default function NavBar() {
                 </Link>
               </li>
               <DropDownSandoq />
-              
-                <DropDownBishtar />
-            
+
+              <DropDownBishtar />
             </ul>
           </div>
         </div>

@@ -71,37 +71,37 @@ export default function SoalatMotedavel() {
               در حال حاضر ۶ صندوق سرمایه‌گذاری فعال می‌باشد.
               <div className="mt-4 flex flex-col justify-center md:flex-row">
                 <a
-                  className="mb-2 align-top mx-6 text-center inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none  border-slate-900 hover:border-purple-500 text-black dark:hover:bg-purple-800 hover:text-purple-100"
+                  className="mb-2 align-top mx-6 text-center inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none  border-slate-900 hover:border-purple-800 text-black dark:hover:bg-purple-900 hover:text-purple-100"
                   href="https://ahrominvest.ir/zomorod"
                 >
                   زمرد{" "}
                 </a>
                 <a
-                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none border-slate-900 hover:border-yellow-500 dark:hover:bg-yellow-900 hover:text-yellow-100"
+                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none border-slate-900 hover:border-yellow-800 dark:hover:bg-yellow-900 hover:text-yellow-100"
                   href="https://ahrominvest.ir/kahroba"
                 >
                   کهربا{" "}
                 </a>
                 <a
-                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none border-slate-900 hover:border-green-500 dark:hover:bg-green-900 hover:text-green-100"
+                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none border-slate-900 hover:border-green-800 dark:hover:bg-green-900 hover:text-green-100"
                   href="https://ahrominvest.ir/yaghot"
                 >
                   یاقوت{" "}
                 </a>
                 <a
-                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none border-slate-900 hover:border-red-600 dark:hover:bg-red-900 hover:text-red-100"
+                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none border-slate-900 hover:border-red-800 dark:hover:bg-red-900 hover:text-red-100"
                   href="https://ahrominvest.ir/almas"
                 >
                   الماس{" "}
                 </a>
                 <a
-                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none  border-slate-900 hover:border-sky-500 dark:hover:bg-sky-950 hover:text-sky-100"
+                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none  border-slate-900 hover:border-sky-900 dark:hover:bg-sky-950 hover:text-sky-100"
                   href="https://ahrominvest.ir/amitist"
                 >
                   آمیتیست{" "}
                 </a>
                 <a
-                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none border-slate-900 hover:border-yellow-500 dark:hover:bg-yellow-900 hover:text-yellow-100"
+                  className="mx-6 mb-2 text-center text-black inline-block rounded-full border-2 border-warning px-6 pb-[6px] pt-2 text-lg font-medium leading-normal text-warning transition duration-150 ease-in-out hover:border-warning-600 hover:bg-warning-50/50 hover:text-warning-600 focus:border-warning-600 focus:bg-warning-50/50 focus:text-warning-600 focus:outline-none focus:ring-0 active:border-warning-700 active:text-warning-700 motion-reduce:transition-none border-slate-900 hover:border-yellow-800 dark:hover:bg-yellow-900 hover:text-yellow-100"
                   href="https://ahrominvest.ir/tala"
                 >
                   طلا{" "}

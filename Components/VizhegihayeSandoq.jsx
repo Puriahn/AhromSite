@@ -10,7 +10,7 @@ export default function VizhegihayeSandoq() {
       <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 text-center sm:grid-cols-2 sm:gap-0 md:text-right">
         <div className="space-y-4 p-4 hover:cursor-default sm:p-6">
           <div className="flex flex-col items-center justify-center gap-4 gap-y-6 md:flex-row md:items-start md:justify-start md:gap-6 ">
-            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl ">
+            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] hover:shadow-xl active:translate-y-[0px] active:rounded-2xl ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -40,7 +40,7 @@ export default function VizhegihayeSandoq() {
         </div>
         <div className="space-y-4 p-4 hover:cursor-default sm:p-6">
           <div className="flex flex-col items-center justify-center gap-4 gap-y-6 md:flex-row md:items-start md:justify-start md:gap-6">
-            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl ">
+            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] hover:shadow-xl active:translate-y-[0px] active:rounded-2xl ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -70,7 +70,7 @@ export default function VizhegihayeSandoq() {
         </div>
         <div className="space-y-4 p-4 hover:cursor-default sm:p-6">
           <div className="flex flex-col items-center justify-center gap-4 gap-y-6 md:flex-row md:items-start md:justify-start md:gap-6">
-            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl ">
+            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] hover:shadow-xl active:translate-y-[0px] active:rounded-2xl ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
@@ -100,7 +100,7 @@ export default function VizhegihayeSandoq() {
         </div>
         <div className="space-y-4 p-4 hover:cursor-default sm:p-6">
           <div className="flex flex-col items-center justify-center gap-4 gap-y-6 md:flex-row md:items-start md:justify-start md:gap-6">
-            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl ">
+            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] hover:shadow-xl active:translate-y-[0px] active:rounded-2xl ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -130,7 +130,7 @@ export default function VizhegihayeSandoq() {
         </div>
         <div className="space-y-4 p-4 hover:cursor-default sm:p-6">
           <div className="flex flex-col items-center justify-center gap-4 gap-y-6 md:flex-row md:items-start md:justify-start md:gap-6">
-            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl ">
+            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] hover:shadow-xl active:translate-y-[0px] active:rounded-2xl ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 384 512"
@@ -160,7 +160,7 @@ export default function VizhegihayeSandoq() {
         </div>
         <div className="space-y-4 p-4 hover:cursor-default sm:p-6">
           <div className="flex flex-col items-center justify-center gap-4 gap-y-6 md:flex-row md:items-start md:justify-start md:gap-6">
-            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl ">
+            <div className="rounded-2xl bg-gray-100 p-4 text-slate-900 shadow transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md  active:translate-x-[0px] hover:shadow-xl active:translate-y-[0px] active:rounded-2xl ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 640 512"

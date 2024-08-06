@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa-IR">
-      <body dir="rtl" className={Yekan.className}>
+      <body dir="rtl" className={inter.className}>
         <NavBar />
         {children}
       </body>
