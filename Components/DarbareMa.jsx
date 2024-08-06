@@ -27,7 +27,9 @@ export default function DarbareMa() {
             alt="تصویر شرکت"
             draggable="false"
           />
+
         </div>
+        
       </div>
     </div>
   );

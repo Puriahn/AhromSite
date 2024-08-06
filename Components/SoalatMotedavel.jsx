@@ -8,13 +8,13 @@ export default function SoalatMotedavel() {
         </div>
         <div className="m-2 space-y-2 mx-10 lg:mx-auto min-w-4xl max-w-5xl md:min-w-2xl">
           <div
-            className="group flex flex-col gap-2 rounded-full bg-slate-100 py-4 px-6 text-black"
+            className="group flex flex-col gap-4 rounded-2xl bg-[#F9FAFB] py-4 px-6 text-black"
             tabIndex="1"
           >
             <div className="flex cursor-pointer items-center justify-between font-bold text-xl">
               <span> صندوق سرمایه‌گذاری چیست؟ </span>
               <img
-                src="https://img.icons8.com/ios/50/circled-chevron-down.png"
+                src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
                 className="h-8 w-8 transition-all duration-500 group-focus:-rotate-180"
               />
             </div>
@@ -25,7 +25,7 @@ export default function SoalatMotedavel() {
           </div>
 
           <div
-            className="group flex flex-col gap-2 rounded-full bg-slate-100 py-4 px-6 text-black"
+            className="group flex flex-col gap-2 rounded-2xl bg-[#F9FAFB] py-4 px-6 text-black"
             tabIndex="2"
           >
             <div className="flex cursor-pointer items-center justify-between font-bold text-xl">
@@ -42,7 +42,7 @@ export default function SoalatMotedavel() {
           </div>
 
           <div
-            className="group flex flex-col gap-2 rounded-full bg-slate-100 py-4 px-6 text-black"
+            className="group flex flex-col gap-2 rounded-2xl bg-[#F9FAFB] py-4 px-6 text-black"
             tabIndex="3"
           >
             <div className="flex cursor-pointer items-center justify-between font-bold text-xl">
@@ -57,7 +57,7 @@ export default function SoalatMotedavel() {
             </div>
           </div>
           <div
-            className="group flex flex-col gap-2 rounded-full bg-slate-100 py-4 px-6 text-black"
+            className="group flex flex-col gap-2 rounded-2xl bg-[#F9FAFB] py-4 px-6 text-black"
             tabIndex="1"
           >
             <div className="flex cursor-pointer items-center justify-between font-bold text-xl">
@@ -111,7 +111,7 @@ export default function SoalatMotedavel() {
           </div>
 
           <div
-            className="group flex flex-col gap-2 rounded-full bg-slate-100 py-4 px-6 text-black"
+            className="group flex flex-col gap-2 rounded-2xl bg-[#F9FAFB] py-4 px-6 text-black"
             tabIndex="2"
           >
             <div className="flex cursor-pointer items-center justify-between font-bold text-xl">
@@ -128,7 +128,7 @@ export default function SoalatMotedavel() {
           </div>
 
           <div
-            className="group flex flex-col gap-2 rounded-full bg-slate-100 py-4 px-6 text-black"
+            className="group flex flex-col gap-2 rounded-2xl bg-[#F9FAFB] py-4 px-6 text-black"
             tabIndex="3"
           >
             <div className="flex cursor-pointer items-center justify-between font-bold text-xl">
@@ -145,7 +145,7 @@ export default function SoalatMotedavel() {
             </div>
           </div>
           <div
-            className="group flex flex-col gap-2 rounded-full bg-slate-100 py-4 px-6 text-black"
+            className="group flex flex-col gap-2 rounded-2xl bg-[#F9FAFB] py-4 px-6 text-black"
             tabIndex="1"
           >
             <div className="flex cursor-pointer items-center justify-between font-bold text-xl">
@@ -162,7 +162,7 @@ export default function SoalatMotedavel() {
           </div>
 
           <div
-            className="group flex flex-col gap-2 rounded-full bg-slate-100 py-4 px-6 text-black"
+            className="group flex flex-col gap-2 rounded-2xl bg-[#F9FAFB] py-4 px-6 text-black"
             tabIndex="2"
           >
             <div className="flex cursor-pointer items-center justify-between font-bold text-xl">
