@@ -9,7 +9,7 @@ export default function SideNav({ menu }) {
   return (
     <>
       <div
-        className={`transform bg-stone-100 z-20 w-full transition-all overflow-y-auto fixed duration-300 translate-y-28 ${
+        className={`transform bg-stone-100 z-20 w-full transition-all overflow-y-auto visible lg:invisible fixed duration-300 translate-y-20 ${
           menu ? "translate-x-0" : "translate-x-full"
         }  `}
         id="overlay"
@@ -77,7 +77,7 @@ export default function SideNav({ menu }) {
                 </a>
                 <a
                   href="https://ahrominvest.ir/tala"
-                  className="block font-medium text-slate-900 flex space-x-2 space-x-reverse"
+                  className=" font-medium text-slate-900 flex space-x-2 space-x-reverse"
                 >
                   <span>صندوق طلا</span>
                   <span className="text-white text-xs px-1.5 py-0.5 ms-2 font-medium rounded-xl flex items-center">
@@ -202,7 +202,7 @@ export default function SideNav({ menu }) {
           <div>
             <a
               href="https://ahrominvest.ir/app"
-              className="btn flex w-auto items-center justify-center bg-ahrom text-white"
+              className="py-6 rounded-2xl flex w-auto items-center justify-center bg-ahrom text-white"
             >
               دانلود اپلیکیشن
             </a>

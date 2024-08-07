@@ -1,7 +1,160 @@
+"use client";
+import { useState } from "react";
+import { soalatQablSandoq } from "./data";
+import { soalatBadSandoq } from "./data";
+
 export default function SoalatMotedavel() {
+  const [dataUp, setDataUp] = useState(soalatQablSandoq);
+  const [dataDown, setDataDown] = useState(soalatBadSandoq);
+  const [sandoqVaDarayi, setSandoqVaDarayi] = useState([false, false]);
+
+  function handleShow(id) {
+    if (id < 3) {
+      setDataUp((prevS) => {
+        const finalState = { ...prevS[id], open: !prevS[id].open };
+        const Array = prevS.filter((item) => item.id !== id);
+        const finalArray = [...Array, finalState];
+        finalArray.sort((a, b) => a.id - b.id);
+        return finalArray;
+      });
+    }
+    
+    else if (id === 11) {
+      setSandoqVaDarayi((prevS) => [!prevS[0], prevS[1]]);
+    }
+     
+    else if (id === 12) {
+      setSandoqVaDarayi((prevS) => [prevS[0], !prevS[1]]);
+    }
+    
+    else {
+      setDataDown((prevS) => {
+        const finalState = { ...prevS[id-3], open: !prevS[id-3].open };
+        const Array = prevS.filter((item) => item.id !== id);
+        const finalArray = [...Array, finalState];
+        finalArray.sort((a, b) => a.id - b.id);
+        return finalArray;
+      });
+    }
+  }
   return (
     <>
-      <main>
+        <div className="text-center mb-16">
+          <h2 className="text-5xl mb-5">سوالات متدوال</h2>
+          <p>پرتکرارترین سوالات کاربران را در این قسمت مشاهده کنید.</p>
+        </div>
+        <div className="m-2 space-y-2 mx-10 lg:mx-auto min-w-4xl max-w-5xl md:min-w-2xl">
+          {dataUp.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => handleShow(item.id)}
+              className=" cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
+              tabIndex="1"
+            >
+              <div className="flex items-center justify-between font-bold text-xl">
+                <span> {item.q}</span>
+                <img
+                  src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
+                  className={`h-8 w-8 transition-all duration-500 ${
+                    item.open && "-rotate-180"
+                  } float-left`}
+                />
+              </div>
+              <div
+                className={`text-slate-800  h-auto max-h-0 items-center opacity-0 transition-all ${
+                  item.open && " max-h-screen opacity-100 duration-1000"
+                }  `}
+              >
+                {item.a}
+              </div>
+            </div>
+          ))}
+          <div
+            onClick={() => handleShow(11)}
+            className="  cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
+            tabIndex="1"
+          >
+            <div className="flex items-center justify-between font-bold text-xl">
+              <span>سرمایه‌گذاری اهرم چند صندوق سرمایه‌گذاری دارد؟ </span>
+              <img
+                src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
+                className={`h-8 w-8 transition-all duration-500 ${
+                  sandoqVaDarayi[0] && "-rotate-180"
+                } float-left`}
+              />
+            </div>
+
+            <div
+              className={`text-slate-800  h-auto max-h-0 items-center opacity-0 transition-all ${
+                sandoqVaDarayi[0] && " max-h-screen opacity-100 duration-1000"
+              }  `}
+            >
+              در حال حاضر ۶ صندوق سرمایه‌گذاری فعال می‌باشد.
+              <a href="https://ahrominvest.ir/zomorod">صندوق زمرد / </a>
+              <a href="https://ahrominvest.ir/kahroba">صندوق کهربا / </a>
+              <a href="https://ahrominvest.ir/yaghot">صندوق یاقوت / </a>
+              <a href="https://ahrominvest.ir/almas">صندوق الماس / </a>
+              <a href="https://ahrominvest.ir/amitist">صندوق آمیتیست / </a>
+              <a href="https://ahrominvest.ir/tala">صندوق طلا </a>
+            </div>
+          </div>
+
+          <div
+            onClick={() => handleShow(12)}
+            className="  cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
+            tabIndex="1"
+          >
+            <div className="flex items-center justify-between font-bold text-xl">
+              <span>صندوق ها از چه دارایی هایی تشکیل شده اند؟</span>
+              <img
+                src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
+                className={`h-8 w-8 transition-all duration-500 ${
+                  sandoqVaDarayi[1] && "-rotate-180"
+                } float-left`}
+              />
+            </div>
+
+            <div
+              className={`text-slate-800  h-auto max-h-0 items-center opacity-0 transition-all ${
+                sandoqVaDarayi[1] && " max-h-screen opacity-100 duration-1000"
+              }`}
+            >
+              برای مشاهده ترکیب دارایی هر صندوق وارد صفحه{" "}
+              <a href="https://ahrominvest.ir/assetmix">ترکیب دارایی‌ها</a>{" "}
+              شوید.
+            </div>
+          </div>
+
+          {dataDown.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => handleShow(item.id)}
+              className=" cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
+              tabIndex="1"
+            >
+              <div className="flex items-center justify-between font-bold text-xl">
+                <span> {item.q}</span>
+                <img
+                  src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
+                  className={`h-8 w-8 transition-all duration-500 ${
+                    item.open && "-rotate-180"
+                  } float-left`}
+                />
+              </div>
+              <div
+                className={`text-slate-800  h-auto max-h-0 items-center opacity-0 transition-all ${
+                  item.open && " max-h-screen opacity-100 duration-1000"
+                }  `}
+              >
+                {item.a}
+              </div>
+            </div>
+          ))}
+        </div>
+    </>
+  );
+}
+/*<main>
         <div className="text-center mb-16">
           <h2 className="text-5xl mb-5">سوالات متدوال</h2>
           <p>پرتکرارترین سوالات کاربران را در این قسمت مشاهده کنید.</p>
@@ -122,8 +275,7 @@ export default function SoalatMotedavel() {
               />
             </div>
             <div className="text-slate-800 invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-              بعد از ثبت‌نام در سرمایه‌گذاری اهرم کافیست فرم مشاوره سرمایه‌گذاری
-              را تکمیل کنید تا کارشناسان ما با شما ارتباط بگیرند.
+              بعد از ثبت‌نام در سرمایه‌گذاری اهرم کافیست فرم مشاوره سرمایه‌گذاری را تکمیل کنید تا کارشناسان ما با شما ارتباط بگیرند.
             </div>
           </div>
 
@@ -156,8 +308,7 @@ export default function SoalatMotedavel() {
               />
             </div>
             <div className="text-slate-800 invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-              کارمزد تمامی صندوق ها ۱ درصد می‌باشد. این کارمزد بابت هزینه خرید و
-              فروش و مدیریت دارایی از سرمایه‌‌گذاران دریافت می‌شود.
+              کارمزد تمامی صندوق ها ۱ درصد می‌باشد. این کارمزد بابت هزینه خرید و فروش و مدیریت دارایی از سرمایه‌‌گذاران دریافت می‌شود.
             </div>
           </div>
 
@@ -176,12 +327,8 @@ export default function SoalatMotedavel() {
               />
             </div>
             <div className=" text-slate-800invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-              احراز هویت تمامی سرمایه‌گذاران با توجه به قوانین کشور انجام می‌شود
-              و بدون احراز هویت امکان سرمایه‌گذاری وجود ندارد.
+              احراز هویت تمامی سرمایه‌گذاران با توجه به قوانین کشور انجام می‌شود و بدون احراز هویت امکان سرمایه‌گذاری وجود ندارد.
             </div>
           </div>
         </div>
-      </main>
-    </>
-  );
-}
+      </main>*/

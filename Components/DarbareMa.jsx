@@ -1,6 +1,6 @@
 export default function DarbareMa() {
   return (
-    <div className="bg-gray-50 mt-20 px-6 py-20 shadow-sm sm:px-8 lg:py-24" id="about">
+    <div className="bg-gray-50 mt-20 px-6 py-20 shadow-sm sm:px-8 lg:py-24" id="aboutUs">
       <div className="mx-auto max-w-5xl">
         <div className="flex flex-col rounded-3xl bg-white shadow md:flex-row">
           <div className="order-1 p-6 md:-order-1 md:w-1/2 md:p-12 lg:w-1/2">

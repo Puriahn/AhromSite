@@ -14,7 +14,6 @@ export default function NavBar() {
     setMainMenu(prevS=>!prevS)
   }
 
-
   const controlNavbar = () => {
     if (typeof window !== 'undefined') { 
       if (window.scrollY > lastScrollY && window.scrollY>570) { // if scroll down hide the navbar
@@ -122,8 +121,9 @@ export default function NavBar() {
               </li>
               <li>
                 <Link
-                  href="#"
-                  className="block py-2 px-3 rounded md:hover:text-zinc-600 md:p-0"
+                
+                  href="#aboutUs"
+                  className=" block py-2 px-3 rounded md:hover:text-zinc-600 md:p-0"
                 >
                   درباره ما
                 </Link>

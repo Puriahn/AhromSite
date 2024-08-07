@@ -3,7 +3,7 @@ export default function ApplicationDownload() {
     <>
       <div
         id="advertise_section"
-        className="hidden lg:block relative mx-auto max-w-5xl px-8 lg:px-0 pt-12 pb-24"
+        className="hidden lg:block relative mx-auto max-w-5xl mt-28 px-8 lg:px-0 pt-12 pb-24"
       >
         <div className="absolute z-10 left-5 bottom-10">
           <img
