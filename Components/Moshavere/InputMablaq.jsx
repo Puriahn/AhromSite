@@ -2,7 +2,7 @@ export default function InputMablaq(){
     return<div className="col-span-12">
     <label
       for="invest_amount"
-      className="block pb-2 text-xl font-medium text-slate-900 after:text-red-600 after:content-['*']"
+      className="block pb-2 text-sm font-medium text-slate-900 after:text-red-600 after:content-['*']"
     >
       مبلغ سرمایه‌گذاری (تومان)
     </label>

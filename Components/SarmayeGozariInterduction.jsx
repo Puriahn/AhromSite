@@ -5,7 +5,7 @@ export default function SarmayeGozariInterduction() {
         <h2 className="pb-4 text-2xl font-bold text-slate-900 md:text-3xl">
           صندوق سرمایه‌گذاری
         </h2>
-        <p className="text-slate-900 text-xl">
+        <p className="text-slate-900">
           صندوق‌های سرمایه‌گذاری برای چه کسانی مناسب است؟
         </p>
       </div>
@@ -23,7 +23,7 @@ export default function SarmayeGozariInterduction() {
           <h2 className="mb-4 text-3xl font-bold text-slate-900 sm:text-4xl">
             نداشتن وقت کافی
           </h2>
-          <p className="mb-4 text-slate-900 text-xl">
+          <p className="mb-4 text-slate-900">
             اگر شاغل هستید و وقت کافی برای معامله کردن در بازارهای مالی را
             ندارید، صندوق‌های سرمایه‌گذاری بهترین راه برای سرمایه‌گذاری شما
             هستند. کافیست صندوق‌ها را خریداری کنید تا صندوق، سرمایه شما را
@@ -44,7 +44,7 @@ export default function SarmayeGozariInterduction() {
           <h2 className="mb-4 text-3xl font-bold text-slate-900 sm:text-4xl">
             نداشتن تجربه
           </h2>
-          <p className="mb-4 text-slate-900 text-xl">
+          <p className="mb-4 text-slate-900">
             اصلی ترین عامل شکست افراد در بازارهای مالی نداشتن تجربه است. اگر
             تجربه و مهارت کافی برای معامله کردن در بازار مالی را ندارید، کافیست
             با خرید صندوق‌ها، مدیریت سرمایه خود را به کارشناسان خبره صندوق
@@ -65,7 +65,7 @@ export default function SarmayeGozariInterduction() {
           <h2 className="mb-4 text-3xl font-bold text-slate-900 sm:text-4xl">
             پس‌انداز سرمایه
           </h2>
-          <p className="mb-4 text-slate-900 text-xl">
+          <p className="mb-4 text-slate-900">
             اگر می‌خواهید به صورت دوره‌ای بخشی از دارایی خود را پس‌انداز کنید و
             یا قصد سرمایه‌گذاری بلند مدت را در بازارهای مالی دارید، صندوق‌های
             سرمایه‌گذاری بهترین روش برای سرمایه‌گذاری شما هستند.

@@ -5,14 +5,26 @@ import NavBar from "@/Components/Navbar/navbar";
 import Footer from "@/Components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
-/*const Yekan = localFont({
+const Yekan = localFont({
   src: [
     {
-      path: "../public/Font/BYekan+.ttf",
+      path: "../public/Font/Vazirmatn-RD-Bold.8e17c255.woff2",
       weight: "700",
     },
+    {
+      path: "../public/Font/Vazirmatn-RD-Medium.4a1ab646.woff2",
+      weight: "500",
+    },
+    {
+      path: "../public/Font/Vazirmatn-RD-Regular.a49678eb.woff2",
+      weight: "400",
+    },
+    {
+      path: "../public/Font/Vazirmatn-RD-SemiBold.63d3850b.woff2",
+      weight: "600",
+    },
   ],
-});*/
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -22,7 +34,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa-IR">
-      <body dir="rtl" className={inter.className}>
+      <body dir="rtl" className={Yekan.className}>
         <NavBar />
         {children}
         <Footer/>

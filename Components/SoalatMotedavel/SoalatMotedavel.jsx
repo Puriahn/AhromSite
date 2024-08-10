@@ -39,8 +39,8 @@ export default function SoalatMotedavel() {
   }
   return (
     <>
-        <div className="text-center mb-16">
-          <h2 className="text-5xl mb-5">سوالات متدوال</h2>
+        <div className="text-center mb-16" id='soalatMotedavel'>
+          <h2 className="pb-4 text-2xl font-bold text-slate-900 md:text-3xl">سوالات متدوال</h2>
           <p>پرتکرارترین سوالات کاربران را در این قسمت مشاهده کنید.</p>
         </div>
         <div className="m-2 space-y-2 mx-10 lg:mx-auto min-w-4xl max-w-5xl md:min-w-2xl">
@@ -61,7 +61,7 @@ export default function SoalatMotedavel() {
                 />
               </div>
               <div
-                className={`text-slate-800  h-auto max-h-0 items-center opacity-0 transition-all ${
+                className={`text-slate-800 h-auto pb-2 max-h-0 items-center opacity-0 transition-all ${
                   item.open && " max-h-screen opacity-100 duration-1000"
                 }  `}
               >
