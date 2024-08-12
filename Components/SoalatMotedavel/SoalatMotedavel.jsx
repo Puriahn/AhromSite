@@ -29,7 +29,7 @@ export default function SoalatMotedavel() {
     
     else {
       setDataDown((prevS) => {
-        const finalState = { ...prevS[id-3], open: !prevS[id-3].open };
+        const finalState = { ...prevS[id], open: !prevS[id].open };
         const Array = prevS.filter((item) => item.id !== id);
         const finalArray = [...Array, finalState];
         finalArray.sort((a, b) => a.id - b.id);
@@ -43,15 +43,15 @@ export default function SoalatMotedavel() {
           <h2 className="pb-4 text-2xl font-bold text-slate-900 md:text-3xl">سوالات متدوال</h2>
           <p>پرتکرارترین سوالات کاربران را در این قسمت مشاهده کنید.</p>
         </div>
-        <div className="m-2 space-y-2 mx-10 lg:mx-auto min-w-4xl max-w-5xl md:min-w-2xl">
+        <div className="m-2 space-y-2 mx-10 lg:mx-auto min-w-4xl max-w-5xl md:min-w-2xl selcet-none">
           {dataUp.map((item) => (
             <div
               key={item.id}
               onClick={() => handleShow(item.id)}
-              className=" cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
+              className={` cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between`}
               tabIndex="1"
             >
-              <div className="flex items-center justify-between font-bold text-xl">
+              <div className={`flex items-center  transition-all justify-between font-semibold text-sm md:text-xl md:font-bold`}>
                 <span> {item.q}</span>
                 <img
                   src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
@@ -61,7 +61,7 @@ export default function SoalatMotedavel() {
                 />
               </div>
               <div
-                className={`text-slate-800 h-auto pb-2 max-h-0 items-center opacity-0 transition-all ${
+                className={`text-slate-800 h-auto max-h-0 items-center pb-2 opacity-0 transition-all ${
                   item.open && " max-h-screen opacity-100 duration-1000"
                 }  `}
               >
@@ -71,10 +71,10 @@ export default function SoalatMotedavel() {
           ))}
           <div
             onClick={() => handleShow(11)}
-            className="  cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
+            className=" select-none cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
             tabIndex="1"
           >
-            <div className="flex items-center justify-between font-bold text-xl">
+            <div className="flex items-center justify-between font-semibold text-sm md:text-xl md:font-bold">
               <span>سرمایه‌گذاری اهرم چند صندوق سرمایه‌گذاری دارد؟ </span>
               <img
                 src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
@@ -85,7 +85,7 @@ export default function SoalatMotedavel() {
             </div>
 
             <div
-              className={`text-slate-800  h-auto max-h-0 items-center opacity-0 transition-all ${
+              className={`text-slate-800  h-auto max-h-0 items-center pb-2 opacity-0 transition-all ${
                 sandoqVaDarayi[0] && " max-h-screen opacity-100 duration-1000"
               }  `}
             >
@@ -101,10 +101,10 @@ export default function SoalatMotedavel() {
 
           <div
             onClick={() => handleShow(12)}
-            className="  cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
+            className=" select-none cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
             tabIndex="1"
           >
-            <div className="flex items-center justify-between font-bold text-xl">
+            <div className="flex items-center justify-between font-semibold text-sm md:text-xl md:font-bold">
               <span>صندوق ها از چه دارایی هایی تشکیل شده اند؟</span>
               <img
                 src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
@@ -115,7 +115,7 @@ export default function SoalatMotedavel() {
             </div>
 
             <div
-              className={`text-slate-800  h-auto max-h-0 items-center opacity-0 transition-all ${
+              className={`text-slate-800 pb-2 h-auto max-h-0 items-center opacity-0 transition-all ${
                 sandoqVaDarayi[1] && " max-h-screen opacity-100 duration-1000"
               }`}
             >
@@ -129,10 +129,10 @@ export default function SoalatMotedavel() {
             <div
               key={item.id}
               onClick={() => handleShow(item.id)}
-              className=" cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
+              className="select-none cursor-pointer flex w-full flex-col gap-4 rounded-2xl bg-[#F9FAFB] pt-5 px-6 text-black justify-between"
               tabIndex="1"
             >
-              <div className="flex items-center justify-between font-bold text-xl">
+              <div className="flex items-center justify-between font-semibold text-sm md:text-xl md:font-bold">
                 <span> {item.q}</span>
                 <img
                   src="https://img.icons8.com/material-sharp/24/expand-arrow--v1.png"
@@ -142,7 +142,7 @@ export default function SoalatMotedavel() {
                 />
               </div>
               <div
-                className={`text-slate-800  h-auto max-h-0 items-center opacity-0 transition-all ${
+                className={`text-slate-800  h-auto max-h-0 pb-2 items-center opacity-0 transition-all ${
                   item.open && " max-h-screen opacity-100 duration-1000"
                 }  `}
               >

@@ -15,6 +15,9 @@ module.exports = {
       },
       colors:{
         'ahrom':'#084642'
+      },
+      fontFamily:{
+        IranSans:['var(--font-poppins)']
       }
      
     },

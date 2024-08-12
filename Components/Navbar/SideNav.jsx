@@ -1,8 +1,9 @@
 export default function SideNav({ menu }) {
-    if(menu){
+    if(menu&&typeof document !== "undefined"){
         document.body.style.overflow = "hidden"
       }
-      else{
+      else if(!menu&&typeof document !== "undefined"){
+        
         document.body.style.overflow = "scroll"
 
       }

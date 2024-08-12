@@ -59,49 +59,50 @@ export default function DropDownSandoq() {
       <div
         onMouseEnter={handleHover}
         onMouseLeave={handleLeft}
-        className="invisible absolute z-50 flex w-44 rounded-md flex-col bg-white py-1 text-gray-800 shadow-xl group-hover:visible"
+        className="invisible absolute z-50 flex w-44 rounded-xl flex-col bg-white py-1 text-gray-800 shadow-xl group-hover:visible"
       >
-        <Link
-          href="/"
+        <a
+          href="/zomorod"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق زمرد
-        </Link>
+        </a>
 
-        <Link
-          href="/"
+        <a
+          href="/kahroba"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق کهربا
-        </Link>
+        </a>
 
-        <Link
-          href="/"
+        <a
+          href="/yaghot"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق یاقوت
-        </Link>
+        </a>
 
-        <Link
-          href="/"
+        <a
+          href="/almas"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق الماس
-        </Link>
+        </a>
 
-        <Link
-          href="/"
+        <a
+          href="/amitist"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق آمیتیست
-        </Link>
+        </a>
 
-        <Link
-          href="/"
-          className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
+        <a
+          href="/tala"
+          className=" py-3 text-black transition hover:bg-stone-100 rounded-sm px-4 flex"
         >
-          صندوق طلا
-        </Link>
+          <span>صندوق طلا</span>
+          <span className="text-white text-xs px-1.5 py-0.5 ms-2 font-medium rounded-xl flex items-center" style={{backgroundColor: "#CEAD44"}}>جدید</span>
+        </a>
       </div>
     </li>
   );

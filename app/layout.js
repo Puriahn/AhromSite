@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "@/Components/Navbar/navbar";
 import Footer from "@/Components/Footer";
+import ReduxProvider from "@/lib/ReduxProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const Yekan = localFont({
@@ -25,6 +26,15 @@ const Yekan = localFont({
     },
   ],
 });
+const IranSans = localFont({
+  src: [
+    {
+      path: "../public/IRANSans-web.woff",
+      weight: "400",
+    },
+  ],
+  variable: "--font-poppins",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -34,10 +44,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa-IR">
-      <body dir="rtl" className={Yekan.className}>
+      <body
+        suppressHydrationWarning={true}
+        dir="rtl"
+        className={Yekan.className}
+      >
         <NavBar />
-        {children}
-        <Footer/>
+        <ReduxProvider>{children}</ReduxProvider>
+        <Footer />
       </body>
     </html>
   );

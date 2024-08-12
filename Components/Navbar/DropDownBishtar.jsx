@@ -17,8 +17,8 @@ export default function DropDownBishtar() {
         onMouseLeave={handleLeft}
         className="flex"
       >
-        <a id="a_menu_more" href="#" class="flex justify-between relative">
-                    <p class="p-0 text-slate-900 font-medium">
+        <a id="a_menu_more" href="#" className="flex justify-between relative">
+                    <p className="p-0 text-slate-900 font-medium">
                         بیشتر
                     </p>
                     </a>
@@ -59,28 +59,28 @@ export default function DropDownBishtar() {
       <div
         onMouseEnter={handleHover}
         onMouseLeave={handleLeft}
-        className="invisible absolute z-50 flex w-44 rounded-md flex-col bg-white py-1 text-gray-800 shadow-xl group-hover:visible"
+        className="invisible absolute z-50 flex w-44 rounded-xl flex-col bg-white py-1 text-gray-800 shadow-xl group-hover:visible"
       >
         <Link
-          href="#consulting"
+          href="/#consulting"
           className=" block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           درخواست مشاوره{" "}
         </Link>
 
-        <Link
-          href="/"
+        <a
+          href="/risk-tolerance-test"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           آزمون ریسک‌پذیری{" "}
-        </Link>
+        </a>
 
-        <Link
-          href="/"
+        <a
+          href="/gift-card"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           کارت هدیه{" "}
-        </Link>
+        </a>
 
         <Link
           href="/"
@@ -90,7 +90,7 @@ export default function DropDownBishtar() {
         </Link>
 
         <Link
-          href="#soalatMotedavel"
+          href="/#soalatMotedavel"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           سوالات متداول{" "}

@@ -1,4 +1,10 @@
+'use client'
+import { usePathname } from "next/navigation";
 export default function ApplicationDownload() {
+  const path=usePathname()
+  if (path.startsWith('/application')){
+    return
+  }
   return (
     <>
       <div
@@ -37,7 +43,7 @@ export default function ApplicationDownload() {
               </div>
 
               <a
-                href="https://ahrominvest.ir/app"
+                href="/application"
                 className="flex space-x-1 space-x-reverse"
               >
                 <div>

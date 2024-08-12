@@ -1,14 +1,14 @@
-import SoalatMotedavel from "@/Components/SoalatMotedavel/SoalatMotedavel";
-import Header from "./Header";
 import Moshavere from "@/Components/Moshavere/Moshavere";
 import Nemudar from "./Nemudar";
+import SoalatMotedavelZomorod from "./SoalatMotedaveZomorod";
+import HeaderPage from "./HeaderPage";
 
 export default function page() {
   return (
     <>
-      <Header />
+      <HeaderPage/>
       <Nemudar />
-      <SoalatMotedavel />
+      <SoalatMotedavelZomorod/>
       <Moshavere />
     </>
   );
