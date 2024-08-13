@@ -152,7 +152,7 @@ console.log(isActiveCheckBox)
                 parseInt(price + 45000)
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              )}
+              )} تومان
             </button>
           </div>
         </section>

@@ -90,7 +90,7 @@ export default function DropDownBishtar() {
         </Link>
 
         <Link
-          href="/#soalatMotedavel"
+          href="/#faq"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           سوالات متداول{" "}

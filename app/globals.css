@@ -5,3 +5,26 @@
 html{
     scroll-behavior: smooth;
 }
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+  .check:checked:before {
+    content: "✔";
+  }
+  
+  .content {
+  background: #ffffcc;
+  width: 500px;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s ease-in-out;
+  font-size: 18pt;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#state:checked ~ .content {  
+  max-height: 150px;
+}
+.inner {
+  margin: 16px;
+}

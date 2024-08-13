@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 export default function ApplicationDownload() {
   const path=usePathname()
-  if (path.startsWith('/application')){
+  if (path.startsWith('/application')||path.startsWith('/credit')){
     return
   }
   return (

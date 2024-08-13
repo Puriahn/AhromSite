@@ -1,13 +1,23 @@
 "use client";
+
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+
 import DropDownSandoq from "./DropDownSandoq";
 import DropDownBishtar from "./DropDownBishtar";
 import SideNav from "./SideNav";
+
+
 export default function NavBar() {
+  const path=usePathname()
+  if (path.startsWith('/credit')){
+    return 
+  }
   const [show, setShow] = useState(true);
   const [hideBefore,setIt]=useState(true)
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mainMenu, setMainMenu] = useState(false);
+  const x=!mainMenu?' -translate-y-full':''
 
   function handleMainMenu() {
     setMainMenu((prevS) => !prevS);
@@ -47,15 +57,15 @@ export default function NavBar() {
   }, [lastScrollY]);
   return (
     <>
-      <SideNav menu={mainMenu} />
+      <SideNav menu={mainMenu} setMenu={setMainMenu} />
       <header
         className={` w-full py-4 z-20 fixed transition-transform duration-300 transform sm:p-8 sm:px-12 
           ${
             (typeof window !== "undefined" && window.scrollY > 600)
               ? " border-slate-200 border bg-white sm:py-4 fixed"
-              : "lg:bg-[#F9FAFB] border-none bg-white absolute"
+              : "lg:bg-[#F9FAFB] border lg:border-none bg-white absolute"
           }   
-           ${(show&&hideBefore) ? " translate-y-0" : "-translate-y-full "}`}
+           ${(show&&hideBefore) ? " translate-y-0" :x }`}
       >
         <div className="mx-4 flex max-w-5xl sm:mx-auto items-center justify-between ">
           <a
@@ -106,7 +116,7 @@ export default function NavBar() {
             <ul className="flex gap-x-8  font-medium">
               <li>
                 <a
-                  href="https://ahrominvest.ir"
+                  href=""
                   className="menu-link text-slate-900"
                 >
                   خانه
@@ -121,7 +131,7 @@ export default function NavBar() {
 
               <li>
                 <a
-                  href="https://ahrominvest.ir/credit"
+                  href="/credit"
                   className="menu-link text-slate-900"
                 >
                   دریافت اعتبار
@@ -129,7 +139,7 @@ export default function NavBar() {
               </li>
 
               <li>
-                <a href="#aboutUs" className="menu-link text-slate-900">
+                <a href="/#aboutUs" className="menu-link text-slate-900">
                   درباره ما
                 </a>
               </li>
@@ -140,7 +150,7 @@ export default function NavBar() {
           </nav>
           <div className="hidden lg:block">
             <a
-              href="https://ahrominvest.ir/app"
+              href="/application"
               className="h-[3.25rem] px-[2rem] font-semibold text-[0.875rem]  rounded-2xl flex w-auto items-center justify-center bg-ahrom text-white"
             >
               دانلود اپلیکیشن

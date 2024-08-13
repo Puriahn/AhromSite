@@ -39,7 +39,7 @@ export default function SoalatMotedavel() {
   }
   return (
     <>
-        <div className="text-center mb-16" id='soalatMotedavel'>
+        <div className="text-center mb-16" id='faq'>
           <h2 className="pb-4 text-2xl font-bold text-slate-900 md:text-3xl">سوالات متدوال</h2>
           <p>پرتکرارترین سوالات کاربران را در این قسمت مشاهده کنید.</p>
         </div>
