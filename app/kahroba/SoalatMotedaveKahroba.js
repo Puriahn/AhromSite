@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export const data = [
@@ -25,11 +26,11 @@ export const data = [
     id: 3,
     q: " صندوق کهربا از چه دارایی‌هایی تشکیل شده است؟",
     a: (
-      <p class="inline-block">
+      <p className="inline-block">
                     برای مشاهده ترکیب دارایی صندوق کهربا به صفحه 
-                    <a href="https://ahrominvest.ir/assetmix" class="text-ahrom mx-1">
+                    <Link href="https://ahrominvest.ir/assetmix" className="text-ahrom mx-1">
                         ترکیب دارایی‌ها
-                    </a> 
+                    </Link> 
                     مراجعه کنید.
                 </p>
     ),
@@ -63,16 +64,16 @@ export default function SoalatMotedavelKahroba() {
   }
 
   return (
-    <div class="mx-auto max-w-5xl px-6 pb-20 sm:px-8 lg:pb-24" id="faqSection">
-      <div class="pb-12 text-center">
-        <h2 class="pb-4 text-2xl font-bold text-slate-900 md:text-3xl">
+    <div className="mx-auto max-w-5xl px-6 pb-20 sm:px-8 lg:pb-24" id="faqSection">
+      <div className="pb-12 text-center">
+        <h2 className="pb-4 text-2xl font-bold text-slate-900 md:text-3xl">
           سوالات متداول
         </h2>
-        <p class="text-slate-900">
+        <p className="text-slate-900">
           پرتکرار ترین سوالات کاربران را در این قسمت مشاهده کنید.
         </p>
       </div>
-      <div class="mx-auto max-w-5xl space-y-4">
+      <div className="mx-auto max-w-5xl space-y-4">
         {soalat.map((item) => (
           <div
             key={item.id}

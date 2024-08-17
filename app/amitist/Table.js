@@ -1,4 +1,6 @@
-import data from "../../fake-api.json";
+'use client'
+import { useState,useEffect } from "react";
+import axios from "axios";
 
 const chart = [
   { label: "بازدهی امروز", percent: "1day_percentage" },
@@ -11,6 +13,25 @@ const chart = [
 ];
 
 export default function Table() {
+  const [amitist, setAmitist] = useState([]);
+  async function Get(){
+        await axios.get('https://ahrominvest.ir/api/dev/market').then(res=>{
+          setAmitist(res.data.amitist)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+   
+  useEffect(() => {
+    Get()
+    const interval = setInterval(() => {
+      Get()
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+
+
   function toFarsiNumber(n) {
     const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
     return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
@@ -38,7 +59,7 @@ export default function Table() {
         </thead>
         <tbody>
           {chart.map((col) => (
-            <tr>
+            <tr key={col.label}>
               <td className="whitespace-nowrap border border-slate-200 px-3 py-3 dark:border-navy-500 lg:px-5">
                 <p className="text-sm+ font-medium font-16 text-slate-800 dark:text-navy-100">
                   {col.label}
@@ -48,19 +69,19 @@ export default function Table() {
                 <p
                   dir="ltr"
                   className={`font-medium font-16 text-right ${
-                    parseFloat(data.amitist[col.percent]) < 0
+                    parseFloat(amitist[col.percent]) < 0
                       ? "text-rose-500"
                       : "text-green-800"
                   } `}
                 >
-                  {data.amitist[col.percent] === null
+                  {amitist[col.percent] === null
                     ? "-"
                     : hazfManfi(
                         toFarsiNumber(
-                          parseFloat(data.amitist[col.percent]).toFixed(2)
+                          parseFloat(amitist[col.percent]).toFixed(2)
                         )
                       )}
-                  {data.amitist[col.percent] !== null&&'%'}
+                  {amitist[col.percent] !== null&&'%'}
                 </p>
               </td>
             </tr>

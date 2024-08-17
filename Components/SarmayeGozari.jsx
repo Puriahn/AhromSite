@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SarmayeGozari() {
   return (
     <div className="relative  lg:pt-[7.5rem] pb-[10px] bg-[#F9FAFB]">
@@ -15,20 +17,20 @@ export default function SarmayeGozari() {
           </p>
           <div className="mx-auto mt-6 flex max-w-sm flex-col gap-3 sm:flex-row sm:justify-start lg:mx-0">
             <div className="sm:w-1/2 lg:w-auto">
-              <a
+              <Link
                 href="/application"
                 className="flex w-full items-center justify-center bg-ahrom text-white shadow-sm hover:opacity-90  sm:w-auto h-[3.25rem] rounded-xl px-[32px]"
               >
                 شروع سرمایه‌گذاری
-              </a>
+              </Link>
             </div>
             <div className="sm:w-1/2 lg:w-auto">
-              <a
+              <Link
                 href="/#consulting"
                 className="h-[3.25rem] rounded-xl px-[2rem] flex w-full items-center justify-center border-2 border-slate-400 bg-white text-slate-700 hover:bg-slate-400 hover:text-white sm:w-auto"
               >
                 درخواست مشاوره
-              </a>
+              </Link>
             </div>
           </div>
         </div>

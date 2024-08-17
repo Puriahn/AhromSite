@@ -58,8 +58,7 @@ export default function SoalatMotedavelEtebar() {
               <div
                 id={`accordion-text-01`}
                 role="region"
-                aria-labelledby={`accordion-title-01`}
-                className={`grid text-md font-light text-slate-600 overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`grid text-md  text-slate-900  font-normal overflow-hidden transition-all duration-300 ease-in-out ${
                   item.open
                     ? "grid-rows-[1fr] opacity-100 py-4 "
                     : "grid-rows-[0fr] opacity-0"

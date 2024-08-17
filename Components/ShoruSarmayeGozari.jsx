@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ShoruSarmayeGozari() {
   return (
     <div className="bg-gray-50">
@@ -6,7 +8,7 @@ export default function ShoruSarmayeGozari() {
           <h2 className="text-xl font-bold text-slate-900">
             اولین قدم خود را برای یک سرمایه‌گذاری مناسب بردارید.
           </h2>
-          <a href="/application" className="flex w-full items-center justify-center bg-ahrom text-white shadow-sm hover:opacity-90  sm:w-auto h-[3.25rem] rounded-full px-[2rem]">شروع سرمایه‌گذاری</a>
+          <Link href="/application" className="flex w-full items-center justify-center bg-ahrom text-white shadow-sm hover:opacity-90  sm:w-auto h-[3.25rem] rounded-full px-[2rem]">شروع سرمایه‌گذاری</Link>
       </div>
     </div>
     </div>

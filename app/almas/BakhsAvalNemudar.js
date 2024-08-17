@@ -1,6 +1,6 @@
-"use client";
-import data from "../../fake-api.json";
-
+'use client'
+import { useState,useEffect } from "react";
+import axios from "axios";
 const chart = [
   {
     label: "قیمت خرید",
@@ -73,6 +73,25 @@ const chart = [
 ];
 
 export default function BakshAvalNemudar() {
+
+  const [almas, setAlmas] = useState([]);
+  async function Get(){
+        await axios.get('https://ahrominvest.ir/api/dev/market').then(res=>{
+          setAlmas(res.data.almas)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+   
+  useEffect(() => {
+    Get()
+    const interval = setInterval(() => {
+      Get()
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+
   function toFarsiNumber(n) {
     const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
     return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
@@ -95,12 +114,12 @@ export default function BakshAvalNemudar() {
             >
               {item.label !== "بازدهی از ابتدا"
                 ? `${toFarsiNumber(
-                    parseInt(data.almas[item.number])
+                    parseInt(almas[item.number])
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                   )} تومان`
                 : `${toFarsiNumber(
-                    parseFloat(data.almas[item.number]).toFixed(2)
+                    parseFloat(almas[item.number]).toFixed(2)
                   )}%`}
             </p>
           </div>

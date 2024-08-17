@@ -1,5 +1,7 @@
 "use client";
-import data from "../../fake-api.json";
+"use client";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const chart = [
   {
@@ -73,12 +75,30 @@ const chart = [
 ];
 
 export default function BakshAvalNemudar() {
+  const [zomorod, setZomorod] = useState([]);
+  async function Get() {
+    await axios
+      .get("https://ahrominvest.ir/api/dev/market")
+      .then((res) => {
+        setZomorod(res.data.zomorod);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    Get();
+    const interval = setInterval(() => {
+      Get();
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   function toFarsiNumber(n) {
-    const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    return n
-        .toString()
-        .replace(/\d/g, x => farsiDigits[x]);
-}
+    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
+  }
   return (
     <div className="my-2 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:my-8">
       {chart.map((item) => (
@@ -88,8 +108,22 @@ export default function BakshAvalNemudar() {
           </div>
           <div className=" space-y-3">
             <h3 className="text-slate-900 font-bold text-16">{item.label}</h3>
-            <p className={`text-xl ${item.label==="بازدهی از ابتدا"?"text-green-800":'text-slate-900'}`}>
-              {item.label!=="بازدهی از ابتدا"? `${toFarsiNumber(parseInt(data.zomorod[item.number]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','))} تومان`:`${toFarsiNumber(parseFloat(data.zomorod[item.number]).toFixed(2))}%`}
+            <p
+              className={`text-xl ${
+                item.label === "بازدهی از ابتدا"
+                  ? "text-green-800"
+                  : "text-slate-900"
+              }`}
+            >
+              {item.label !== "بازدهی از ابتدا"
+                ? `${toFarsiNumber(
+                    parseInt(zomorod[item.number])
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                  )} تومان`
+                : `${toFarsiNumber(
+                    parseFloat(zomorod[item.number]).toFixed(2)
+                  )}%`}
             </p>
           </div>
         </div>

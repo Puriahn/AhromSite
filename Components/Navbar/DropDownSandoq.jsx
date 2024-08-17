@@ -17,11 +17,11 @@ export default function DropDownSandoq() {
         onMouseLeave={handleLeft}
         className="flex"
       >
-        <a id="a_menu_more" href="#" className="flex justify-between relative">
+        <Link id="a_menu_more" href="#" className="flex justify-between relative">
                     <p className="p-0 text-slate-900 font-medium">
                         صندوق
                     </p>
-                    </a>
+                    </Link>
         
           <svg
           className={
@@ -59,50 +59,50 @@ export default function DropDownSandoq() {
       <div
         onMouseEnter={handleHover}
         onMouseLeave={handleLeft}
-        className="invisible absolute z-50 flex w-44 rounded-xl flex-col bg-white py-1 text-gray-800 shadow-xl group-hover:visible"
+        className="invisible absolute z-50 flex w-44 rounded-xl flex-col bg-white py-2 text-gray-800 shadow-xl group-hover:visible"
       >
-        <a
+        <Link
           href="/zomorod"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق زمرد
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/kahroba"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق کهربا
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/yaghot"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق یاقوت
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/almas"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق الماس
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/amitist"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           صندوق آمیتیست
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/tala"
           className=" py-3 text-black transition hover:bg-stone-100 rounded-sm px-4 flex"
         >
           <span>صندوق طلا</span>
           <span className="text-white text-xs px-1.5 py-0.5 ms-2 font-medium rounded-xl flex items-center" style={{backgroundColor: "#CEAD44"}}>جدید</span>
-        </a>
+        </Link>
       </div>
     </li>
   );

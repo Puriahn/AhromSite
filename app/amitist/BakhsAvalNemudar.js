@@ -1,5 +1,6 @@
-"use client";
-import data from "../../fake-api.json";
+'use client'
+import { useState,useEffect } from "react";
+import axios from "axios";
 
 const chart = [
   {
@@ -73,6 +74,24 @@ const chart = [
 ];
 
 export default function BakshAvalNemudar() {
+  const [amitist, setAmitist] = useState([]);
+  async function Get(){
+        await axios.get('https://ahrominvest.ir/api/dev/market').then(res=>{
+          setAmitist(res.data.amitist)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+   
+  useEffect(() => {
+    Get()
+    const interval = setInterval(() => {
+      Get()
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+
   function toFarsiNumber(n) {
     const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
     return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
@@ -89,18 +108,18 @@ export default function BakshAvalNemudar() {
             <p
               className={`text-xl ${
                 item.label === "بازدهی از ابتدا"
-                  ? "text-green-800"
+                  ? "text-rose-500"
                   : "text-slate-900"
               }`}
             >
               {item.label !== "بازدهی از ابتدا"
                 ? `${toFarsiNumber(
-                    parseInt(data.amitist[item.number])
+                    parseInt(amitist[item.number])
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                   )} تومان`
                 : `${toFarsiNumber(
-                    parseFloat(data.amitist[item.number]).toFixed(2)
+                    parseFloat(amitist[item.number]).toFixed(2)
                   )}%`}
             </p>
           </div>

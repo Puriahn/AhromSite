@@ -1,11 +1,11 @@
 import Etebar from "./Etebar";
-import NavEtebar from "./NavEtebar";
+import AllModals from "./AllModals";
 
 export default function page() {
   return (
     <>
-    <NavEtebar/>
-      <Etebar/>
+      <Etebar />
+      <AllModals />
     </>
   );
 }

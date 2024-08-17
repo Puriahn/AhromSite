@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 export default function ApplicationDownload() {
   const path=usePathname()
@@ -42,7 +43,7 @@ export default function ApplicationDownload() {
                 </p>
               </div>
 
-              <a
+              <Link
                 href="/application"
                 className="flex space-x-1 space-x-reverse"
               >
@@ -58,7 +59,7 @@ export default function ApplicationDownload() {
                     <path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z" />
                   </svg>
                 </div>
-              </a>
+              </Link>
 
               <div className="flex space-x-2 space-x-reverse">
                 <div className="flex space-x-1 space-x-reverse">

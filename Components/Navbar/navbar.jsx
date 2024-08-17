@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import DropDownSandoq from "./DropDownSandoq";
 import DropDownBishtar from "./DropDownBishtar";
 import SideNav from "./SideNav";
+import Link from "next/link";
 
 
 export default function NavBar() {
@@ -68,7 +69,7 @@ export default function NavBar() {
            ${(show&&hideBefore) ? " translate-y-0" :x }`}
       >
         <div className="mx-4 flex max-w-5xl sm:mx-auto items-center justify-between ">
-          <a
+          <Link
             href="/"
             className="z-20 select-none  sm:flex sm:items-center sm:gap-4"
           >
@@ -83,7 +84,7 @@ export default function NavBar() {
             >
               سرمایه‌گذاری اهرم
             </h2>
-          </a>
+          </Link>
           <div className="lg:hidden flex items-center space-x-4 space-x-reverse">
             <button
               onClick={handleMainMenu}
@@ -115,33 +116,33 @@ export default function NavBar() {
           <nav className="hidden lg:block ">
             <ul className="flex gap-x-8  font-medium">
               <li>
-                <a
-                  href=""
+                <Link
+                  href="/"
                   className="menu-link text-slate-900"
                 >
                   خانه
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="/#features" className="menu-link text-slate-900">
+                <Link href="/#features" className="menu-link text-slate-900">
                   ویژگی‌ها
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
+                <Link
                   href="/credit"
                   className="menu-link text-slate-900"
                 >
                   دریافت اعتبار
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="/#aboutUs" className="menu-link text-slate-900">
+                <Link href="/#aboutUs" className="menu-link text-slate-900">
                   درباره ما
-                </a>
+                </Link>
               </li>
 
               <DropDownSandoq />
@@ -149,12 +150,12 @@ export default function NavBar() {
             </ul>
           </nav>
           <div className="hidden lg:block">
-            <a
+            <Link
               href="/application"
               className="h-[3.25rem] px-[2rem] font-semibold text-[0.875rem]  rounded-2xl flex w-auto items-center justify-center bg-ahrom text-white"
             >
               دانلود اپلیکیشن
-            </a>
+            </Link>
           </div>
         </div>
       </header>

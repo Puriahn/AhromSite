@@ -5,8 +5,9 @@ import { useState } from "react";
 import DropDownBishtar from "@/Components/Navbar/DropDownBishtar";
 import DropDownSandoq from "@/Components/Navbar/DropDownSandoq";
 import SideNav from "@/Components/Navbar/SideNav";
+import Link from "next/link";
 
-export default function NavEtebar() {
+export default function NavEtebar({classes}) {
     const [mainMenu, setMainMenu] = useState(false);
     function handleMainMenu() {
         setMainMenu((prevS) => !prevS);
@@ -15,11 +16,11 @@ export default function NavEtebar() {
     <>
     <SideNav menu={mainMenu} setMenu={setMainMenu}/>
     <header
-      class=" top-0 z-20 w-full translate-y-0 border border-slate-200 bg-white p-4 sm:p-8 sm:px-12 absolute lg:border-none lg:bg-gray-50"
+      className={`${classes} top-0 z-20 w-full translate-y-0 border border-slate-200 bg-white p-4 sm:p-8 sm:px-12 absolute lg:border-none lg:bg-gray-50`}
       id="header"
     >
-      <div class="mx-auto flex max-w-5xl items-center justify-between">
-        <a href="/" class="z-20 select-none sm:flex sm:items-center sm:gap-4">
+      <div className="mx-auto flex max-w-5xl items-center justify-between">
+        <Link href="/" className="z-20 select-none sm:flex sm:items-center sm:gap-4">
           <img
             style={{ width: "50px" }}
             src="https://ahrominvest.ir/page/assets/images/logo.png"
@@ -27,15 +28,15 @@ export default function NavEtebar() {
           />
           <h2
             style={{ fontSize: "20px" }}
-            class="hidden sm:block text-slate-900"
+            className="hidden sm:block text-slate-900"
           >
             سرمایه‌گذاری اهرم
           </h2>
-        </a>
-        <div class="lg:hidden flex items-center space-x-4 space-x-reverse">
+        </Link>
+        <div className="lg:hidden flex items-center space-x-4 space-x-reverse">
           <div id="header_chat_btn" style={{ marginTop: "5px" }}>
             <svg
-              class="w-6 h-6"
+              className="w-6 h-6"
               fill="#000"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -49,72 +50,72 @@ export default function NavEtebar() {
           <button
           onClick={handleMainMenu}
             type="button"
-            class="z-20 transition-transform duration-300"
+            className="z-20 transition-transform duration-300"
             id="btnToggleMenu"
           >
             <svg
-              class="icon"
+              className="icon"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <line x1="3" y1="10" x2="21" y2="10" />
               <line x1="3" y1="20" x2="21" y2="20" />
             </svg>
           </button>
         </div>
-        <nav class="hidden lg:block">
-          <ul class="flex gap-x-8 font-medium">
+        <nav className="hidden lg:block">
+          <ul className="flex gap-x-8 font-medium">
             <li>
-              <a href="https://ahrominvest.ir" class="menu-link text-slate-900">
+              <Link href="/" className="menu-link text-slate-900">
                 خانه
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="https://ahrominvest.ir/#features"
-                class="menu-link text-slate-900"
+              <Link
+                href="/#features"
+                className="menu-link text-slate-900"
               >
                 ویژگی‌ها
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="https://ahrominvest.ir/credit"
-                class="menu-link text-slate-900"
+              <Link
+                href="/credit"
+                className="menu-link text-slate-900"
               >
                 دریافت اعتبار
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a
-                href="https://ahrominvest.ir/#about"
-                class="menu-link text-slate-900"
+              <Link
+                href="/#about"
+                className="menu-link text-slate-900"
               >
                 درباره ما
-              </a>
+              </Link>
             </li>
 
             <DropDownSandoq/>
             <DropDownBishtar/>
           </ul>
         </nav>
-        <div class="hidden lg:block">
-          <a
-            href="https://ahrominvest.ir/app"
-            class="h-[3.25rem] px-[2rem] font-semibold text-[0.875rem]  rounded-2xl flex w-auto items-center justify-center bg-ahrom text-white"
+        <div className="hidden lg:block">
+          <Link
+            href="/app"
+            className="h-[3.25rem] px-[2rem] font-semibold text-[0.875rem]  rounded-2xl flex w-auto items-center justify-center bg-ahrom text-white"
           >
             دانلود اپلیکیشن
-          </a>
+          </Link>
         </div>
       </div>
     </header></>

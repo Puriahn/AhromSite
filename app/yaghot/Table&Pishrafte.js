@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Table from "./Table";
 
 export default function TableAndPishrafte() {
@@ -46,7 +47,7 @@ export default function TableAndPishrafte() {
               </div>
             </div>
             <div>
-              <a
+              <Link
                 href="https://ahrominvest.ir/chart?symbol=zomorod"
                 target="_blank"
                 className="bg-ahrom rounded-lg flex justify-center items-center cursor-pointer"
@@ -54,7 +55,7 @@ export default function TableAndPishrafte() {
                 <p className="text-white m-0 font-16 py-1 px-3">
                   نمودار پیشرفته
                 </p>
-              </a>
+              </Link>
             </div>
           </div>
           <div data-name="zomorod" id="zomorod_chart_container"></div>

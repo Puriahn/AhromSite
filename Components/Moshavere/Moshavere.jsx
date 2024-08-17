@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import InputMablaq from "./InputMablaq";
+import Link from "next/link";
 
 export default function Moshavere() {
   const [isHuzuri,setIsHuzuri]=useState(true)
@@ -67,11 +68,11 @@ export default function Moshavere() {
                   <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
                   <line x1="12" y1="18" x2="12.01" y2="18"></line>
                 </svg>
-                <a href="tel:02634000253">
+                <Link href="tel:02634000253">
                   <span className="rtl inline-block align-middle  text-slate-900">
                     ۰۲۶-۳۴۰۰۰۲۵۳
                   </span>
-                </a>
+                </Link>
               </div>
               <div className="flex items-center gap-4">
                 <svg
@@ -87,11 +88,11 @@ export default function Moshavere() {
                   <circle cx="12" cy="12" r="4"></circle>
                   <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
                 </svg>
-                <a href="mailto:info@ahrominvest.net">
+                <Link href="mailto:info@ahrominvest.net">
                   <span className="inline-block align-middle text-slate-900">
                     info@ahrominvest.ir
                   </span>
-                </a>
+                </Link>
               </div>
               <div className="flex items-center gap-4">
                 <div>

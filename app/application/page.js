@@ -1,5 +1,7 @@
 'use client'
 
+import Link from "next/link";
+
 export default function App() {
     let deviceType='both'
     if (navigator.userAgent.match(/Android/i)){
@@ -43,7 +45,7 @@ export default function App() {
                   <p className="text-xl font-semibold">برای سیستم‌عامل اندروید</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 w-full">
-                  <a
+                  <Link
                     id="da1"
                     href="https://app.ahrominvest.ir/ahrom.apk"
                     className="hover:cursor-pointer flex justify-between items-center bg-black rounded-md px-2.5 h-12"
@@ -70,8 +72,8 @@ export default function App() {
                         <path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z" />
                       </svg>
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     id="da1"
                     href="https://cafebazaar.ir/app/app.ahrominvest.ir"
                     className="hover:cursor-pointer flex justify-between items-center bg-black rounded-md px-2.5 h-12"
@@ -101,8 +103,8 @@ export default function App() {
                         <path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z" />
                       </svg>
                     </div>
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     id="da1"
                     href="https://myket.ir/app/app.ahrominvest.ir"
                     className="hover:cursor-pointer flex justify-between items-center bg-black rounded-md px-2.5 h-12"
@@ -141,7 +143,7 @@ export default function App() {
                         <path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z" />
                       </svg>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -150,7 +152,7 @@ export default function App() {
                   <p className="text-xl font-semibold">برای سیستم‌عامل IOS</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 w-full">
-                  <a
+                  <Link
                     id="di1"
                     href="http://app.ahrominvest.ir"
                     className="flex justify-between items-center bg-black rounded-md px-2.5 h-12"
@@ -179,7 +181,7 @@ export default function App() {
                         <path d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z" />
                       </svg>
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

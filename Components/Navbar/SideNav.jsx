@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export default function SideNav({ menu, setMenu }) {
@@ -32,15 +33,15 @@ export default function SideNav({ menu, setMenu }) {
         <nav className="h-screen bg-white px-4 pt-8 sm:px-6 md:px-8 overflow-hidden">
           <ul className="flex flex-col gap-4 pb-6 h-[65vh] overflow-auto no-scrollbar">
             <li>
-              <a
+              <Link
                 href="/"
                 className="text-md font-medium text-slate-900 hover:text-slate-900"
               >
                 خانه
-              </a>
+              </Link>
             </li>
             <li id="liMenu">
-              <a
+              <Link
                 id="a_menu"
                 onClick={() => handleShow("sandoq")}
                 href="#"
@@ -61,27 +62,27 @@ export default function SideNav({ menu, setMenu }) {
                     d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"
                   />
                 </svg>
-              </a>
+              </Link>
               <div
                 id="ul_menu"
                 className={`${!show.sandoq && "hidden "} space-y-4 mt-3`}
               >
-                <a href="/zomorod" className="block font-medium text-slate-900">
+                <Link href="/zomorod" className="block font-medium text-slate-900">
                   صندوق زمرد
-                </a>
-                <a href="/kahroba" className="block font-medium text-slate-900">
+                </Link>
+                <Link href="/kahroba" className="block font-medium text-slate-900">
                   صندوق کهربا
-                </a>
-                <a href="/yaghot" className="block font-medium text-slate-900">
+                </Link>
+                <Link href="/yaghot" className="block font-medium text-slate-900">
                   صندوق یاقوت
-                </a>
-                <a href="/almas" className="block font-medium text-slate-900">
+                </Link>
+                <Link href="/almas" className="block font-medium text-slate-900">
                   صندوق الماس
-                </a>
-                <a href="/amitist" className="block font-medium text-slate-900">
+                </Link>
+                <Link href="/amitist" className="block font-medium text-slate-900">
                   صندوق آمیتیست
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/tala"
                   className=" font-medium text-slate-900 flex space-x-2 space-x-reverse"
                 >
@@ -89,65 +90,65 @@ export default function SideNav({ menu, setMenu }) {
                   <span className="text-white text-xs px-1.5 py-0.5 ms-2 font-medium rounded-xl flex items-center">
                     جدید
                   </span>
-                </a>
+                </Link>
               </div>
             </li>
             <li>
-              <a
+              <Link
                 onClick={handleHide}
                 id="features_page_header_mobile"
                 href="/#features"
                 className="text-md cursor-pointer font-medium text-slate-900 hover:text-slate-900"
               >
                 ویژگی‌ها
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 onClick={handleHide}
                 id="consulting_page_header_mobile"
                 href="/#consulting"
                 className="text-md font-medium cursor-pointer text-slate-900 hover:text-slate-900"
               >
                 درخواست مشاوره
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 onClick={handleHide}
                 id="faq_page_header_mobile"
                 href="/#faq"
                 className="text-md font-medium cursor-pointer text-slate-900 hover:text-slate-900"
               >
                 سوالات متداول
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/credit"
                 className="text-md font-medium text-slate-900 hover:text-slate-900"
               >
                 دریافت اعتبار
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/gift-card"
                 className="text-md font-medium text-slate-900 hover:text-slate-900"
               >
                 کارت هدیه
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="/blog"
                 className="text-md font-medium text-slate-900 hover:text-slate-900"
               >
                 وبلاگ
-              </a>
+              </Link>
             </li>
             <li id="liMenu_more">
-              <a
+              <Link
                 onClick={() => handleShow("bishtar")}
                 id="a_menu_more"
                 href="#"
@@ -168,59 +169,59 @@ export default function SideNav({ menu, setMenu }) {
                     d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"
                   />
                 </svg>
-              </a>
+              </Link>
               <div
                 id="ul_menu_more"
                 className={`${!show.bishtar && "hidden "} space-y-4 mt-3`}
               >
-                <a
+                <Link
                   id="about_page_header_mobile"
                   href="/#about"
                   className="block text-md font-medium text-slate-900 hover:text-slate-900"
                 >
                   درباره ما
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/assetmix"
                   className="block text-md font-medium text-slate-900 hover:text-slate-900"
                 >
                   ترکیب دارایی‌ها
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/risk-tolerance-test"
                   className="block text-md font-medium text-slate-900 hover:text-slate-900"
                 >
                   آزمون ریسک‌پذیری
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/banklist"
                   className="block text-md font-medium text-slate-900 hover:text-slate-900"
                 >
                   شماره حساب‌ها
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/terms"
                   className="block text-md font-medium text-slate-900 hover:text-slate-900"
                 >
                   شرایط استفاده
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/privacy"
                   className="block text-md font-medium text-slate-900 hover:text-slate-900"
                 >
                   حریم خصوصی
-                </a>
+                </Link>
               </div>
             </li>
           </ul>
           <hr className="mx-auto w-4/5 border-t border-slate-300 pb-6" />
           <div>
-            <a
+            <Link
               href="/application"
               className="py-6 rounded-2xl flex w-auto items-center justify-center h-[3.25rem] bg-ahrom text-white"
             >
               دانلود اپلیکیشن
-            </a>
+            </Link>
           </div>
         </nav>
       </div>
@@ -240,12 +241,12 @@ export default function SideNav({ menu, setMenu }) {
       </svg>
       <span className="sr-only">Close menu</span>
    </button>
-   <p className="mb-6 text-sm text-gray-500 dark:text-gray-400">Supercharge your hiring by taking advantage of our <a href="#" className="text-blue-600 underline font-medium dark:text-blue-500 hover:no-underline">limited-time sale</a> for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.</p>
+   <p className="mb-6 text-sm text-gray-500 dark:text-gray-400">Supercharge your hiring by taking advantage of our <Link href="#" className="text-blue-600 underline font-medium dark:text-blue-500 hover:no-underline">limited-time sale</Link> for Flowbite Docs + Job Board. Unlimited access to over 190K top-ranked candidates and the #1 design job board.</p>
    <div className="grid grid-cols-2 gap-4">
-      <a href="#" className="px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Learn more</a>
-      <a href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get access <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+      <Link href="#" className="px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-200 rounded-lg focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Learn more</Link>
+      <Link href="#" className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get access <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-  </svg></a>
+  </svg></Link>
    </div>
 </div>
  */

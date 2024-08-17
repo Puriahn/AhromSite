@@ -17,11 +17,11 @@ export default function DropDownBishtar() {
         onMouseLeave={handleLeft}
         className="flex"
       >
-        <a id="a_menu_more" href="#" className="flex justify-between relative">
+        <Link id="a_menu_more" href="#" className="flex justify-between relative">
                     <p className="p-0 text-slate-900 font-medium">
                         بیشتر
                     </p>
-                    </a>
+                    </Link>
         
           <svg
           className={
@@ -59,7 +59,7 @@ export default function DropDownBishtar() {
       <div
         onMouseEnter={handleHover}
         onMouseLeave={handleLeft}
-        className="invisible absolute z-50 flex w-44 rounded-xl flex-col bg-white py-1 text-gray-800 shadow-xl group-hover:visible"
+        className="invisible absolute z-50 flex w-44 rounded-xl flex-col bg-white py-2 text-gray-800 shadow-xl group-hover:visible"
       >
         <Link
           href="/#consulting"
@@ -68,19 +68,19 @@ export default function DropDownBishtar() {
           درخواست مشاوره{" "}
         </Link>
 
-        <a
+        <Link
           href="/risk-tolerance-test"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           آزمون ریسک‌پذیری{" "}
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/gift-card"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           کارت هدیه{" "}
-        </a>
+        </Link>
 
         <Link
           href="/"
@@ -96,30 +96,30 @@ export default function DropDownBishtar() {
           سوالات متداول{" "}
         </Link>
 
-        <a
+        <Link
           href="/assetmix"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           ترکیب دارایی‌ها
-        </a>
-        <a
+        </Link>
+        <Link
           href="/banklist"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           شماره حساب‌ها{" "}
-        </a>
-        <a
+        </Link>
+        <Link
           href="/terms"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           شرایط استفاده{" "}
-        </a>
-        <a
+        </Link>
+        <Link
           href="/privacy"
           className="block py-3 text-black transition hover:bg-stone-100 rounded-sm px-4"
         >
           حریم خصوصی{" "}
-        </a>
+        </Link>
       </div>
     </li>
   );

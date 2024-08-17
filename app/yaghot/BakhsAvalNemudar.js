@@ -1,5 +1,6 @@
 "use client";
-import data from "../../fake-api.json";
+import { useState,useEffect } from "react";
+import axios from "axios";
 
 const chart = [
   {
@@ -73,6 +74,24 @@ const chart = [
 ];
 
 export default function BakshAvalNemudar() {
+  const [yaghot, setYaghot] = useState([]);
+  async function Get(){
+        await axios.get('https://ahrominvest.ir/api/dev/market').then(res=>{
+          setYaghot(res.data.yaghot)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+   
+  useEffect(() => {
+    Get()
+    const interval = setInterval(() => {
+      Get()
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+
   function toFarsiNumber(n) {
     const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
     return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
@@ -95,12 +114,12 @@ export default function BakshAvalNemudar() {
             >
               {item.label !== "بازدهی از ابتدا"
                 ? `${toFarsiNumber(
-                    parseInt(data.yaghot[item.number])
+                    parseInt(yaghot[item.number])
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                   )} تومان`
                 : `${toFarsiNumber(
-                    parseFloat(data.yaghot[item.number]).toFixed(2)
+                    parseFloat(yaghot[item.number]).toFixed(2)
                   )}%`}
             </p>
           </div>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <div className="relative pt-[7.5rem] bg-gray-50">
@@ -14,12 +16,12 @@ export default function Header() {
           </p>
           <div className="mx-auto mt-6 flex max-w-sm flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start lg:mx-0">
             <div className="sm:w-1/2 lg:w-auto">
-              <a
+              <Link
                 href="#view"
                 className="flex w-full items-center justify-center bg-ahrom text-white shadow-sm hover:opacity-90  sm:w-auto h-[3.25rem] rounded-xl px-[2rem]"
               >
                 شروع آزمون
-              </a>
+              </Link>
             </div>
           </div>
         </div>

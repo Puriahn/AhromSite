@@ -1,7 +1,9 @@
-import data from "../../fake-api.json";
+'use client'
+import { useState,useEffect } from "react";
+import axios from "axios";
 
 const chart = [
-  { label: "بازدهی امروز", percent: "1day_percentage" },
+  { label: "بازدهی امروز", percent: "1day_percentage_24h" },
   { label: "بازدهی هفتگی", percent: "7day_percentage" },
   { label: "بازدهی ماهانه", percent: "1month_percentage" },
   { label: "بازدهی سه ماه", percent: "3month_percentage" },
@@ -11,6 +13,23 @@ const chart = [
 ];
 
 export default function Table() {
+  const [yaghot, setYaghot] = useState([]);
+  async function Get(){
+        await axios.get('https://ahrominvest.ir/api/dev/market').then(res=>{
+          setYaghot(res.data.yaghot)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+   
+  useEffect(() => {
+    Get()
+    const interval = setInterval(() => {
+      Get()
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   function toFarsiNumber(n) {
     const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
     return n
@@ -40,7 +59,7 @@ export default function Table() {
         </thead>
         <tbody>
           {chart.map((col) => (
-            <tr>
+            <tr key={col.label}>
               <td className="whitespace-nowrap border border-slate-200 px-3 py-3 dark:border-navy-500 lg:px-5">
                 <p className="text-sm+ font-medium font-16 text-slate-800 dark:text-navy-100">
                   {col.label}
@@ -49,9 +68,9 @@ export default function Table() {
               <td className="whitespace-nowrap border border-r-0 border-slate-200 px-3 py-3 dark:border-navy-500 lg:px-5">
                 <p
                   dir="ltr"
-                  className={`font-medium font-16 text-right ${parseFloat(data.yaghot[col.percent])<0 ? 'text-rose-500' : 'text-green-800'} `}
+                  className={`font-medium font-16 text-right ${parseFloat(yaghot[col.percent])<0 ? 'text-rose-500' : 'text-green-800'} `}
                 >
-                  {hazfManfi(toFarsiNumber(parseFloat(data.yaghot[col.percent]).toFixed(2)))} %
+                  {hazfManfi(toFarsiNumber(parseFloat(yaghot[col.percent]).toFixed(2)))} %
                 </p>
               </td>
             </tr>

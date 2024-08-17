@@ -1,5 +1,6 @@
 "use client";
-import data from "../../fake-api.json";
+import { useState,useEffect } from "react";
+import axios from "axios";
 
 const chart = [
   {
@@ -73,10 +74,29 @@ const chart = [
 ];
 
 export default function BakshAvalNemudar() {
+  const [kahroba, setKahroba] = useState([]);
+  async function Get(){
+        await axios.get('https://ahrominvest.ir/api/dev/market').then(res=>{
+          setKahroba(res.data.kahroba)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
+   
+  useEffect(() => {
+    Get()
+    const interval = setInterval(() => {
+      Get()
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+
   function toFarsiNumber(n) {
     const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
     return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
   }
+
   return (
     <div className="my-2 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:my-8">
       {chart.map((item) => (
@@ -95,12 +115,12 @@ export default function BakshAvalNemudar() {
             >
               {item.label !== "بازدهی از ابتدا"
                 ? `${toFarsiNumber(
-                    parseInt(data.kahroba[item.number])
+                    parseInt(kahroba[item.number])
                       .toString()
                       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                   )} تومان`
                 : `${toFarsiNumber(
-                    parseFloat(data.kahroba[item.number]).toFixed(2)
+                    parseFloat(kahroba[item.number]).toFixed(2)
                   )}%`}
             </p>
           </div>

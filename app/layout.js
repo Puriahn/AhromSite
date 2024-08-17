@@ -4,6 +4,8 @@ import "./globals.css";
 import NavBar from "@/Components/Navbar/navbar";
 import Footer from "@/Components/Footer";
 import ReduxProvider from "@/lib/ReduxProvider";
+import NextTopLoader from 'nextjs-toploader';
+
 
 const inter = Inter({ subsets: ["latin"] });
 const Yekan = localFont({
@@ -24,6 +26,10 @@ const Yekan = localFont({
       path: "../public/Font/Vazirmatn-RD-SemiBold.63d3850b.woff2",
       weight: "600",
     },
+    {
+      path:'../public/Font/iranyekanweblight.woff2',
+      weight:'300'
+    }
   ],
 });
 const IranSans = localFont({
@@ -49,6 +55,7 @@ export default function RootLayout({ children }) {
         dir="rtl"
         className={Yekan.className}
       >
+        <NextTopLoader color="#084642" height={8} showSpinner={false} />
         <NavBar />
         <ReduxProvider>{children}</ReduxProvider>
         <Footer />

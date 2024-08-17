@@ -1,8 +1,8 @@
+import Link from "next/link";
 import ApplicationDownload from "./ApplicationDownload";
 
 export default function Footer() {
   return (<>
-  <ApplicationDownload/>
     <footer className="relative h-96 bg-secondary hidden lg:block bg-[#1F1E2B]">
       <div className="mx-auto max-w-5xl p-6 text-sm leading-6 lg:p-10 lg:px-0">
         <div className="flex flex-col justify-between space-y-6 pb-10 text-slate-400 lg:flex-row lg:items-baseline lg:justify-around">
@@ -30,7 +30,7 @@ export default function Footer() {
                 </div>
               </li>
               <li>
-                <a href="mailto:info@ahrominvest.net">
+                <Link href="mailto:info@ahrominvest.net">
                   <div className="flex flex-row-reverse justify-end gap-x-2 hover:text-slate-100">
                     <span>info@ahrominvest.ir</span>
                     <svg
@@ -47,10 +47,10 @@ export default function Footer() {
                       <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path>
                     </svg>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="tel:02634000253">
+                <Link href="tel:02634000253">
                   <div className="flex flex-row-reverse justify-end gap-x-2 hover:text-slate-100">
                     <span>۰۲۶-۳۴۰۰۰۲۵۳</span>
                     <svg
@@ -74,7 +74,7 @@ export default function Footer() {
                       <line x1="12" y1="18" x2="12.01" y2="18"></line>
                     </svg>
                   </div>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -84,7 +84,7 @@ export default function Footer() {
             </div>
             <div className=" flex space-x-reverse space-x-4">
               <div className="w-20 h-auto flex justify-center items-center bg-white rounded-lg p-1">
-                <a
+                <Link
                   href="https://logo.samandehi.ir/Verify.aspx?id=360817&p=xlaogvkaobpdmcsirfthjyoe"
                   target="_blank"
                 >
@@ -92,10 +92,10 @@ export default function Footer() {
                     src="https://ahrominvest.ir/page/samandehi.png"
                     alt="لوگو ساماندهی"
                   />
-                </a>
+                </Link>
               </div>
               <div className="w-20 h-20 flex justify-center items-center bg-white rounded-lg p-1">
-                <a
+                <Link
                   href="https://iranblockchain.org/blockchain-ecosystem/?gv_search=%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87%E2%80%8C%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C+%D8%A7%D9%87%D8%B1%D9%85&filter_16=&mode=any"
                   target="_blank"
                 >
@@ -103,10 +103,10 @@ export default function Footer() {
                     src="https://ahrominvest.ir/page/blockchainAssociation.png"
                     alt="لوگو انجمن بلاک‌چین ایران"
                   />
-                </a>
+                </Link>
               </div>
               <div className="w-20 h-auto flex justify-center items-center bg-white rounded-lg p-1">
-                <a
+                <Link
                   href="https://profile.iwmf.ir/organizations/ahrominvest.ir"
                   target="_blank"
                 >
@@ -114,7 +114,7 @@ export default function Footer() {
                     src="https://ahrominvest.ir/page/iwmf.png"
                     alt="لوگو فین تک"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -125,8 +125,8 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 text-slate-400">
             <p className="rtl text-center text-slate-400">
-              <a href="https://ahrominvest.ir/privacy">حریم خصوصی</a> |{" "}
-              <a href="https://ahrominvest.ir/terms">شرایط استفاده</a>
+              <Link href="https://ahrominvest.ir/privacy">حریم خصوصی</Link> |{" "}
+              <Link href="https://ahrominvest.ir/terms">شرایط استفاده</Link>
             </p>
           </div>
         </div>

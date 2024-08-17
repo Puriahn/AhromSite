@@ -1,11 +1,31 @@
+'use client'
 import SoalatMotedavelEtebar from "./SoalatMotedavelEtebar";
 import Prices from './Prices.js'
 import MazayayeTarh from "./MazayayeTarh";
 import LeftPart from "./LeftPart";
+import NavEtebar from "./NavEtebar";
+import { showActions } from "@/lib/slices/OfCan";
+import OfCan from "@/app/credit/OfCan";
+import { useDispatch,useSelector } from "react-redux";
+
 
 export default function Etebar() {
+  const showStatus=useSelector(state=>state.Show.showStatus)
+  const dispatch=useDispatch()
+
+
+
+  function handleShow(){
+    dispatch(showActions.status('etelaat'))
+  }
   return (
-    <section className="bg-credit-full-page bg-[#F4F7FB] pt-[7rem]">
+    <>
+    <NavEtebar classes={showStatus!==null?'brightness-50':''}/>
+    
+    <OfCan/>
+    
+    <section className={`bg-credit-full-page bg-[#F4F7FB] pt-[7rem] ${showStatus!==null&&'brightness-50'}`}>
+      
       <div
         className="mx-auto max-w-5xl py-[45px] lg:py-12 space-y-10"
         id="heroContainer"
@@ -32,8 +52,8 @@ export default function Etebar() {
 
                 <section
                   id="btn3"
-                  /*onclick="openActionSheet()"*/
-                  className="flex bottom-0 z-50 w-full bg-ahrom lg:hidden items-center px-4 rounded-lg"
+                  onClick={handleShow}
+                  className="flex bottom-0 cursor-pointer z-50 w-full bg-ahrom lg:hidden items-center px-4 rounded-lg"
                 >
                   <div className="flex justify-center w-full py-2.5">
                     <p
@@ -54,6 +74,8 @@ export default function Etebar() {
           </div>
         </div>
       </div>
+      
     </section>
+    </>
   );
 }
