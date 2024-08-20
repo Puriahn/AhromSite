@@ -1,6 +1,4 @@
-'use client'
-import { useState,useEffect } from "react";
-import axios from "axios";
+import Spinner from "@/Components/Common/Spinner";
 
 const chart = [
   { label: "بازدهی امروز", percent: "1day_percentage_24h" },
@@ -12,39 +10,19 @@ const chart = [
   { label: "بازدهی ازابتدا", percent: "start_percentage" },
 ];
 
-export default function Table() {
-  const [almas, setAlmas] = useState([]);
-  async function Get(){
-        await axios.get('https://ahrominvest.ir/api/dev/market').then(res=>{
-          setAlmas(res.data.almas)
-        }).catch(error=>{
-            console.log(error)
-        })
-    }
-   
-  useEffect(() => {
-    Get()
-    const interval = setInterval(() => {
-      Get()
-    }, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
-
+export default function Table({ param,sandoq }) {
+  
   function toFarsiNumber(n) {
-    const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    return n
-        .toString()
-        .replace(/\d/g, x => farsiDigits[x]);
-}
-
-  function hazfManfi(x){
-    if (x[0]=='-'){
-      return x.slice(1)
-    }
-    return x
+    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
   }
 
+  function hazfManfi(x) {
+    if (x[0] == "-") {
+      return x.slice(1);
+    }
+    return x;
+  }
   return (
     <div className="is-scrollbar-hidden overflow-x-auto rounded-lg">
       <table className="w-full h-full">
@@ -61,18 +39,35 @@ export default function Table() {
         <tbody>
           {chart.map((col) => (
             <tr key={col.label}>
-              <td className="whitespace-nowrap border border-slate-200 px-3 py-3 dark:border-navy-500 lg:px-5">
+              <td className="whitespace-nowrap border border-slate-200 px-3 py-5 dark:border-navy-500 lg:px-5">
                 <p className="text-sm+ font-medium font-16 text-slate-800 dark:text-navy-100">
                   {col.label}
                 </p>
               </td>
               <td className="whitespace-nowrap border border-r-0 border-slate-200 px-3 py-3 dark:border-navy-500 lg:px-5">
-                <p
-                  dir="ltr"
-                  className={`font-medium font-16 text-right ${parseFloat(almas[col.percent])<0 ? 'text-rose-500' : 'text-green-800'} `}
-                >
-                  {hazfManfi(toFarsiNumber(parseFloat(almas[col.percent]).toFixed(2)))} %
-                </p>
+                {sandoq ? (
+                  <p
+                    dir="ltr"
+                    className={`font-medium font-16 text-right ${
+                      parseFloat(sandoq[col.percent]) < 0
+                        ? "text-rose-500"
+                        : "text-green-800"
+                    } `}
+                  >
+                    {sandoq[col.percent] === null
+                      ? "-"
+                      : hazfManfi(
+                          toFarsiNumber(
+                            parseFloat(sandoq[col.percent]).toFixed(2)
+                          )
+                        )}
+                    {sandoq[col.percent] !== null && "%"}
+                  </p>
+                ) : (
+                  <div className="flex items-center justify-center">
+                    <Spinner/>
+                  </div>
+                )}
               </td>
             </tr>
           ))}
@@ -81,3 +76,8 @@ export default function Table() {
     </div>
   );
 }
+
+/*import data from "../../fake-api.json";
+
+
+*/

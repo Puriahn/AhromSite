@@ -1,3 +1,4 @@
+import ApplicationDownload from "@/Components/ApplicationDownload";
 import AllPrivacy from "./allPrivacy";
 import Header from "./header";
 
@@ -6,6 +7,7 @@ export default function Privacy() {
     <>
       <Header />
       <AllPrivacy />
+      <ApplicationDownload/>
     </>
   );
 }

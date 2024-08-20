@@ -11,9 +11,9 @@ export default function ModalCodeMeli() {
   const [warningDiv, setWarningDiv] = useState(false);
   const [personData, setPersonData] = useState({
     codeMeli: '',
-    day: "",
-    month: "",
-    year: "",
+    day: "روز",
+    month: "ماه",
+    year: "سال",
   });
 
   function handleHide() {
@@ -94,7 +94,7 @@ export default function ModalCodeMeli() {
             <div className="flex shadow-sm gap-1">
               <div
                 id="day_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.day===""&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.day==="روز"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("day", event)}
@@ -152,7 +152,7 @@ export default function ModalCodeMeli() {
               </div>
               <div
                 id="month_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.month===""&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.month==="ماه"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("month", event)}
@@ -182,7 +182,7 @@ export default function ModalCodeMeli() {
               </div>
               <div
                 id="year_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.year===""&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.year==="سال"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("year", event)}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-export default function HeaderPage() {
+export default function HeaderPage({ name, description }) {
   return (
     <div className="relative pt-[7.5rem] bg-gray-50">
       <div
@@ -7,13 +7,32 @@ export default function HeaderPage() {
         id="heroContainer"
       >
         <div className="z-10 py-20 pt-28 sm:py-24 sm:pt-40 lg:py-32">
-          <h1 className="relative mx-auto max-w-sm  text-center text-2xl font-bold tracking-tight  text-slate-800 sm:text-3xl lg:mx-0 lg:max-w-lg lg:text-right lg:text-4xl">
-            صندوق ارز دیجیتال <span className="text-ahrom" style={{lineHeight: '2'}}>زمرد</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-center text-xl text-slate-900 lg:mx-0 lg:text-right">
-            صندوق زمرد یک صندوق ارز دیجیتال کم ریسک می‌باشد و برای افرادی که
-            ریسک پذیری بالایی ندارند مناسب است.
-          </p>
+          {name === "" ? (
+            <div className="container mx-4 sm:mx-3 m h-36">
+              <div className="info ">
+                <div className="text1 skeleton"></div>
+                <div className="text2 mt-3 skeleton "></div>
+              </div>
+            </div>
+          ) : (
+            <>
+              <h1 className="relative mx-auto max-w-sm  text-center text-2xl font-bold tracking-tight  text-slate-800 sm:text-3xl lg:mx-0 lg:max-w-lg lg:text-right lg:text-4xl">
+                صندوق ارز دیجیتال{" "}
+                <span
+                  className={`${name === "   " && "animate-pulse"} text-ahrom anima`}
+                  style={{ lineHeight: "2" }}
+                >
+                  {name}
+                </span>
+              </h1>
+              <p
+                className={` ${name === "" && "animate-pulse w-64 border bg-slate-700"} mx-auto mt-6 max-w-2xl text-center text-xl text-slate-900 lg:mx-0 lg:text-right`}
+              >
+                {description}
+              </p>
+            </>
+          )}
+
           <div className="mx-auto mt-6 flex max-w-sm flex-col gap-3 sm:flex-row sm:justify-start lg:mx-0">
             <div className="sm:w-1/2 lg:w-auto">
               <Link

@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export default function Moshavere() {
   const [isHuzuri,setIsHuzuri]=useState(true)
+
   function handleHuzuri(){
     setIsHuzuri(true)
   }
@@ -14,7 +15,7 @@ export default function Moshavere() {
   }
   return (
     <>
-      <div className="px-6 pt-20 sm:px-8 lg:pt-24" id="consulting">
+      <div className="px-6 pt-20 mb-10 sm:px-8 lg:pt-24" id="consulting">
         <div className="pb-12 text-center">
           <h2 className="pb-4 text-2xl font-bold text-slate-900 md:text-3xl">
             درخواست مشاوره

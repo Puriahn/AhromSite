@@ -23,9 +23,7 @@ export default function Etebar() {
     <NavEtebar classes={showStatus!==null?'brightness-50':''}/>
     
     <OfCan/>
-    
-    <section className={`bg-credit-full-page bg-[#F4F7FB] pt-[7rem] ${showStatus!==null&&'brightness-50'}`}>
-      
+    <section className={`bg-credit-full-page bg-[#F4F7FB] pt-[7rem] ${showStatus!==null&&'brightness-50'}`}> 
       <div
         className="mx-auto max-w-5xl py-[45px] lg:py-12 space-y-10"
         id="heroContainer"

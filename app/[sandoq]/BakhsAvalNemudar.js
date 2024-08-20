@@ -1,6 +1,6 @@
-"use client";
-import { useState,useEffect } from "react";
-import axios from "axios";
+
+
+import Spinner from "@/Components/Common/Spinner";
 
 const chart = [
   {
@@ -73,30 +73,13 @@ const chart = [
   },
 ];
 
-export default function BakshAvalNemudar() {
-  const [kahroba, setKahroba] = useState([]);
-  async function Get(){
-        await axios.get('https://ahrominvest.ir/api/dev/market').then(res=>{
-          setKahroba(res.data.kahroba)
-        }).catch(error=>{
-            console.log(error)
-        })
-    }
-   
-  useEffect(() => {
-    Get()
-    const interval = setInterval(() => {
-      Get()
-    }, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
+export default function BakshAvalNemudar({ param,sandoq }) {
+  
 
   function toFarsiNumber(n) {
     const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
     return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
   }
-
   return (
     <div className="my-2 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:my-8">
       {chart.map((item) => (
@@ -106,23 +89,27 @@ export default function BakshAvalNemudar() {
           </div>
           <div className=" space-y-3">
             <h3 className="text-slate-900 font-bold text-16">{item.label}</h3>
-            <p
-              className={`text-xl ${
-                item.label === "بازدهی از ابتدا"
-                  ? "text-green-800"
-                  : "text-slate-900"
-              }`}
-            >
-              {item.label !== "بازدهی از ابتدا"
-                ? `${toFarsiNumber(
-                    parseInt(kahroba[item.number])
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-                  )} تومان`
-                : `${toFarsiNumber(
-                    parseFloat(kahroba[item.number]).toFixed(2)
-                  )}%`}
-            </p>
+            {sandoq ? (
+              <p
+                className={`text-xl ${
+                  item.label === "بازدهی از ابتدا"
+                    ? "text-green-800"
+                    : "text-slate-900"
+                }`}
+              >
+                {item.label !== "بازدهی از ابتدا"
+                  ? `${toFarsiNumber(
+                      parseInt(sandoq[item.number])
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+                    )} تومان`
+                  : `${toFarsiNumber(
+                      parseFloat(sandoq[item.number]).toFixed(2)
+                    )}%`}
+              </p>
+            ) : (
+              <Spinner/>
+            )}
           </div>
         </div>
       ))}

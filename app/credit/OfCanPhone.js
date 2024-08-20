@@ -2,16 +2,16 @@
 
 import { useDispatch, useSelector } from "react-redux";
 import { showActions } from "@/lib/slices/OfCan";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import Timer from "./Timer";
 
 export default function OfCanPhone() {
   const showStatus = useSelector((state) => state.Show.showStatus);
   const dispatch = useDispatch();
 
-  const [showTimer,setShowTimer]=useState(false)
+  const [showTimer, setShowTimer] = useState(false);
 
-  const [phoneNumber,setPhoneNumber]=useState()
+  const [phoneNumber, setPhoneNumber] = useState();
   const [warningDiv, setWarningDiv] = useState(false);
 
   const cssClass =
@@ -22,31 +22,33 @@ export default function OfCanPhone() {
   }
 
   function handleMarahel(marhale) {
-    if (marhale==='codePhone'){
-        setShowTimer(true)
+    if (marhale === "codePhone") {
+      setShowTimer(true);
     }
     dispatch(showActions.status(marhale));
   }
 
-  function handlePhoneNumber(event){
-    setPhoneNumber(event.target.value)
+  function handlePhoneNumber(event) {
+    setPhoneNumber(event.target.value);
   }
 
-  function handleSubmitPhone(){
-    var regex = new RegExp('^(\\+98|0)?9\\d{9}$');
+  function handleSubmitPhone() {
+    var regex = new RegExp("^(\\+98|0)?9\\d{9}$");
     var result = regex.test(phoneNumber);
-    if (result){
-      handleMarahel('codePhone')
-    }else{
-      handleWarningDiv()
+    if (result) {
+      handleMarahel("codePhone");
+    } else {
+      handleWarningDiv();
     }
   }
   function handleWarningDiv() {
     setWarningDiv(true);
-    setTimeout(()=>{handleHideWarning()},3000)
+    setTimeout(() => {
+      handleHideWarning();
+    }, 3000);
   }
   function handleHideWarning() {
-    setWarningDiv(false)
+    setWarningDiv(false);
   }
 
   return (
@@ -75,7 +77,7 @@ export default function OfCanPhone() {
         </div>
         <div className="py-3">
           <form
-          autoComplete="off"
+            autoComplete="off"
             data-url="https://ahrominvest.ir/credit/send-otp"
             method="POST"
             id="sendOtpForm"
@@ -97,12 +99,19 @@ export default function OfCanPhone() {
               type="text"
               name="phone_number"
               onChange={handlePhoneNumber}
-              className={`block w-full rounded-xl border ${warningDiv?'border-rose-500':'border-slate-300'} bg-white p-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none focus:ring-1 focus:ring-ahrom`}
+              className={`block w-full rounded-xl border ${
+                warningDiv ? "border-rose-500" : "border-slate-300"
+              } bg-white p-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none focus:ring-1 focus:ring-ahrom`}
               placeholder="شماره موبایل خود را وارد کنید."
             />
-            <div className={`${
-              warningDiv ? " block " : " hidden "
-            } text-red-500 pt-3 text-sm lg:text-base`}>  شماره موبایل وارد شده معتبر نمی باشد. </div>
+            <div
+              className={`${
+                warningDiv ? " block " : " hidden "
+              } text-red-500 pt-3 text-sm lg:text-base`}
+            >
+              {" "}
+              شماره موبایل وارد شده معتبر نمی باشد.{" "}
+            </div>
           </form>
           <div className="flex justify-between mt-5">
             <button
@@ -115,10 +124,6 @@ export default function OfCanPhone() {
           </div>
         </div>
       </div>
-
-
-
-
 
       <div
         className={`${
@@ -157,7 +162,7 @@ export default function OfCanPhone() {
               htmlFor="phoneNumber_input"
               className="block pb-2 text-sm font-medium text-slate-900 after:text-red-600 after:content-['*']"
             >
-               کد ارسال شده به شماره {phoneNumber} را وارد کنید.
+              کد ارسال شده به شماره {phoneNumber} را وارد کنید.
             </label>
             <input
               id="phoneNumber_input"
@@ -175,11 +180,13 @@ export default function OfCanPhone() {
               </p>
             </div>
           </form>
-          {showTimer&&<Timer finished={setShowTimer}/>}
-          {!showTimer&&<button className='pt-3'> ارسال مجدد کد تایید </button>}
+          {showTimer && <Timer finished={setShowTimer} />}
+          {!showTimer && (
+            <button className="pt-3"> ارسال مجدد کد تایید </button>
+          )}
           <div className="flex justify-between mt-5">
             <button
-            onClick={()=>handleMarahel('codeMeli')}
+              onClick={() => handleMarahel("codeMeli")}
               id="send_code_button"
               className="text-white w-full bg-ahrom py-2 flex justify-center rounded-xl "
             >

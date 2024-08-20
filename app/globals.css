@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-  .check:checked:before {
-    content: "✔";
-  }
-  
-  .content {
+.check:checked:before {
+  content: "✔";
+}
+
+.content {
   background: #ffffcc;
   width: 500px;
   overflow: hidden;
@@ -22,9 +22,225 @@ html{
   overflow: hidden;
   box-sizing: border-box;
 }
-#state:checked ~ .content {  
+#state:checked ~ .content {
   max-height: 150px;
 }
 .inner {
   margin: 16px;
+}
+.aaa {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  font-size: 120px;
+  background-image: linear-gradient(#0ef, #0ef);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -600px 0;
+  transition:
+    background-position 1s,
+    text-shadow 1s;
+  transition-delay: 0.6s, 0s;
+}
+.aaa:hover {
+  transition:
+    background-position 1s,
+    text-shadow 1s;
+  transition-delay: 0s, 1s;
+  background-position: 0 0;
+  text-shadow:
+    0 0 10px #0ef,
+    0 0 20px #0ef,
+    0 0 40px #0ef,
+    0 0 80px #0ef,
+    0 0 160px #0ef;
+}
+
+.timeline-item {
+  background-color: #f9fafb;
+  padding: 12px;
+  margin: 0 auto;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 10000px 0;
+  }
+}
+
+.animated-background {
+  animation-duration: 30s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: placeHolderShimmer;
+  background: linear-gradient(to right, #eeeeee 8%, #aacfde 18%, #eeeeee 33%);
+  height: 96px;
+  position: relative;
+}
+
+.background-masker {
+  background: #fff;
+  position: absolute;
+}
+
+/* Every thing below this is just positioning */
+
+.background-masker.content-top,
+.background-masker.content-second-line,
+.background-masker.content-third-line,
+.background-masker.content-second-end,
+.background-masker.content-third-end,
+.background-masker.content-first-end {
+  top: 40px;
+  left: 0;
+  right: 0;
+  height: 6px;
+}
+
+.background-masker.content-first {
+  height: 10px;
+  top: 15px;
+  left: 0;
+  right: 0;
+}
+
+.background-masker.content-top {
+  height: 20px;
+}
+
+.background-masker.content-first-end,
+.background-masker.content-second-end,
+.background-masker.content-third-end {
+  width: auto;
+  left: 380px;
+  right: 0;
+  top: 60px;
+  height: 8px;
+}
+
+.background-masker.content-second-line {
+  top: 68px;
+}
+
+.background-masker.content-second-end {
+  left: 420px;
+  top: 74px;
+}
+
+.background-masker.content-third-line {
+  top: 82px;
+}
+
+.background-masker.content-third-end {
+  left: 300px;
+  top: 88px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #989a9c, #c3acac, #eee);
+  animation: leftToRight 1.5s infinite;
+  background-size: 200%;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.info {
+  margin-left: 10px;
+}
+
+.text1 {
+  width: 500px;
+  height: 32px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+}
+.text2 {
+  width: 700px;
+  height: 16px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+}
+
+@keyframes leftToRight {
+  0% {
+    background-position: -100% 0;
+  }
+
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.gauge {
+  position: relative;
+  border-radius: 50%/100% 100% 0 0;
+  background-color: var(--color, #a22);
+  overflow: hidden;
+}
+
+.gauge:before {
+  content: "";
+  display: block;
+  padding-top: 50%;
+  /* ratio of 2:1*/
+}
+
+.gauge .chart {
+  overflow: hidden;
+}
+
+.gauge .mask {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 0;
+  top: 40%;
+  background-color: #fff;
+  border-radius: 50%/100% 100% 0 0;
+}
+
+.gauge .percentage {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  bottom: 0;
+  right: -1px;
+  background-color: var(--background, #aaa);
+  transform: rotate(var(--rotation));
+  transform-origin: bottom center;
+  transition-duration: 600;
+}
+
+
+.gauge .value {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.gauge .min {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+}
+
+.gauge .max {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
 }
