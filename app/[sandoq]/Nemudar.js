@@ -5,8 +5,10 @@ import axios from "axios";
 import BakshAvalNemudar from "./BakhsAvalNemudar";
 import HeadreNemudar from "./HeaderNemudar";
 import TableAndPishrafte from "./Table&Pishrafte";
+import SoalatMotedavelZomorod from "./SoalatMotedaveZomorod";
 
-export default function Nemudar({name,param}) {
+
+export default function Nemudar({name,param,soal}) {
   const [sandoq, setsandoq] = useState();
   async function Get() {
     await axios
@@ -26,6 +28,8 @@ export default function Nemudar({name,param}) {
     }, 60000);
     return () => clearInterval(interval);
   }, []);
+       
+
   return (
     <>
       <section className="mx-auto max-w-5xl px-6 pt-20 sm:px-8 lg:pt-24">
@@ -43,6 +47,12 @@ export default function Nemudar({name,param}) {
           ></div>
         </div>
       </section>
+      <SoalatMotedavelZomorod
+        percent={sandoq}
+        soal={soal}
+        name={name}
+        key={name}
+      />
     </>
   );
 }

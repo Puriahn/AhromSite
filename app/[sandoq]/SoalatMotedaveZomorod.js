@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function SoalatMotedavelZomorod({ soal, name }) {
+export default function SoalatMotedavelZomorod({ soal, name,percent }) {
   const data = [
     {
       id: 0,
@@ -14,7 +14,7 @@ export default function SoalatMotedavelZomorod({ soal, name }) {
     {
       id: 1,
       q: ` بازدهی صندوق ${name} چقدر می‌باشد؟`,
-      a: `صندوق زمرد یک صندوق با ${soal} می‌باشد. هم‌چنین بازدهی یکساله صندوق زمرد، ۵۲.۶۸ % می‌باشد.`,
+      a: `صندوق زمرد یک صندوق با ${soal} می‌باشد. هم‌چنین بازدهی یکساله صندوق زمرد، ${percent===undefined?'':toFarsiNumber(parseFloat(percent["1year_percentage"]).toFixed(2))} % می‌باشد.`,
       open: false,
     },
     {
@@ -62,6 +62,11 @@ export default function SoalatMotedavelZomorod({ soal, name }) {
       });
   }
 
+  function toFarsiNumber(n) {
+    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
+  }
+  
   return (
     <div
       className="mx-auto max-w-5xl px-6 pb-20 sm:px-8 lg:pb-24"
@@ -76,7 +81,18 @@ export default function SoalatMotedavelZomorod({ soal, name }) {
         </p>
       </div>
       <div className="mx-auto max-w-5xl space-y-4">
-        {name === "" && <div>aaaa</div>}
+        {name === "" &&<div className="mx-auto text-center items-center justify-center">
+          <div className="container p-4 sm:p-1 text-center mx-auto  items-center justify-center ">
+            <div className="info space-y-8">
+              <div className="text3 skeleton"></div>
+              <div className="text3 skeleton"></div>
+              <div className="text3 skeleton"></div>
+              <div className="text3 skeleton"></div>
+              <div className="text3 skeleton"></div>
+              <div className="text3 skeleton"></div>
+            </div>
+          </div>
+        </div>}
         {name !== "" &&
           soalat.map((item) => (
             <div

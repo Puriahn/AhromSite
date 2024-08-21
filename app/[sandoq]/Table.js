@@ -23,6 +23,7 @@ export default function Table({ param,sandoq }) {
     }
     return x;
   }
+
   return (
     <div className="is-scrollbar-hidden overflow-x-auto rounded-lg">
       <table className="w-full h-full">

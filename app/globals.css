@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+
 html {
   scroll-behavior: smooth;
+
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -146,7 +148,7 @@ html {
 }
 
 .skeleton {
-  background: linear-gradient(90deg, #989a9c, #c3acac, #eee);
+  background: linear-gradient(90deg, #edf0f4, #c1cdd8, #bcd3e4);
   animation: leftToRight 1.5s infinite;
   background-size: 200%;
 }
@@ -170,6 +172,12 @@ html {
 .text2 {
   width: 700px;
   height: 16px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+}
+.text3 {
+  width: 700px;
+  height: 50px;
   border-radius: 4px;
   margin-bottom: 3px;
 }

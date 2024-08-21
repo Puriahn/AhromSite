@@ -18,6 +18,7 @@ export default function SideNav({ menu, setMenu }) {
     document.body.style.overflow = "hidden";
   } else if (!menu && typeof document !== "undefined") {
     document.body.style.overflow = "scroll";
+    document.body.style.overflowX = "hidden";
   }
   return (
     <>
@@ -41,11 +42,11 @@ export default function SideNav({ menu, setMenu }) {
               </Link>
             </li>
             <li id="liMenu">
-              <Link
+              <div
                 id="a_menu"
                 onClick={() => handleShow("sandoq")}
                 href="#"
-                className="flex justify-between relative"
+                className="flex justify-between relative cursor-pointer select-none"
               >
                 <p className="p-0 text-slate-900 font-medium">صندوق</p>
                 <svg
@@ -62,7 +63,7 @@ export default function SideNav({ menu, setMenu }) {
                     d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"
                   />
                 </svg>
-              </Link>
+              </div>
               <div
                 id="ul_menu"
                 className={`${!show.sandoq && "hidden "} space-y-4 mt-3`}
@@ -148,11 +149,11 @@ export default function SideNav({ menu, setMenu }) {
               </Link>
             </li>
             <li id="liMenu_more">
-              <Link
+              <div
                 onClick={() => handleShow("bishtar")}
                 id="a_menu_more"
                 href="#"
-                className="flex justify-between relative"
+                className="flex justify-between relative cursor-pointer select-none"
               >
                 <p className="p-0 text-slate-900 font-medium">بیشتر</p>
                 <svg
@@ -169,7 +170,7 @@ export default function SideNav({ menu, setMenu }) {
                     d="M241 337c-9.4 9.4-24.6 9.4-33.9 0L47 177c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l143 143L367 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L241 337z"
                   />
                 </svg>
-              </Link>
+              </div>
               <div
                 id="ul_menu_more"
                 className={`${!show.bishtar && "hidden "} space-y-4 mt-3`}

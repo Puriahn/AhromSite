@@ -3,7 +3,9 @@
 import axios from "axios";
 import Moshavere from "@/Components/Moshavere/Moshavere";
 import Nemudar from "./Nemudar";
-import SoalatMotedavelZomorod from "./SoalatMotedaveZomorod";
+
+
+
 import HeaderPage from "./HeaderPage";
 import { useState, useEffect } from "react";
 
@@ -36,12 +38,7 @@ export default function page({ params }) {
         name={sandoq ? sandoq["name_fa"] : ""}
         description={sandoq ? sandoq["introduction_description"] : ""}
       />
-      <Nemudar name={sandoq ? sandoq["name_fa"] : ""} param={params.sandoq} />
-      <SoalatMotedavelZomorod
-        soal={sandoq ? sandoq["benefit_description"] : ""}
-        name={sandoq ? sandoq["name_fa"]: ''}
-        key={sandoq ? sandoq["name_fa"]: ''}
-      />
+      <Nemudar name={sandoq ? sandoq["name_fa"] : ""} param={params.sandoq} soal={sandoq ? sandoq["benefit_description"] : ""} />
       <Moshavere />
     </>
   );

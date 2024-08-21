@@ -38,7 +38,7 @@ export default function Assetmix() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-5xl pt-14 px-4 space-y-14">
+      <div className="mx-auto max-w-5xl pt-14 px-4 space-y-14 mb-20">
         <div className="w-full py-5 px-3 lg:px-5 bg-[#40B5C4] text-white rounded-lg">
           <p>
             درصد دارایی‌ها به طور تقریبی بوده و با توجه به شرایط ممکن است تغییر

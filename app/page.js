@@ -7,6 +7,7 @@ import SoalatMotedavel from "@/Components/SoalatMotedavel/SoalatMotedavel";
 import VizhegihayeSandoq from "@/Components/VizhegihayeSandoq";
 
 
+
 export default function Home() {
   return (
     <>
@@ -18,6 +19,7 @@ export default function Home() {
       <DarbareMa/>
       <ShoruSarmayeGozari/>
       <Moshavere/>
-    </>
+      
+          </>
   );
 }

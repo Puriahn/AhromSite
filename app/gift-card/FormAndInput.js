@@ -24,6 +24,7 @@ console.log(isActiveCheckBox)
         <div className="flex flex-col-reverse  md:flex-row md:justify-between md:space-x-reverse md:space-x-10  md:items-center md:px-8 md:py-6">
           <section className="w-full px-5 md:px-0 md:w-2/3 space-y-3">
             <form
+            autoComplete="off"
               action="https://ahrominvest.ir/order-gift-card"
               id="gift_form"
               method="POST"

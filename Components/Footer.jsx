@@ -1,8 +1,10 @@
 import Link from "next/link";
+import ApplicationDownload from "./ApplicationDownload";
 
 export default function Footer() {
   return (
     <>
+    <ApplicationDownload/>
       <footer className="relative h-96 bg-secondary hidden lg:block bg-[#1F1E2B]">
         <div className="mx-auto max-w-5xl p-6 text-sm leading-6 lg:p-10 lg:px-0">
           <div className="flex flex-col justify-between space-y-6 pb-10 text-slate-400 lg:flex-row lg:items-baseline lg:justify-around">
