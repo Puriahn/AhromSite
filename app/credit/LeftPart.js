@@ -20,9 +20,7 @@ export default function LeftPart() {
     return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
   }
 
-  function handleHide() {
-    dispatch(showActions.status(null));
-  }
+  
   function handleWarningDiv() {
     setWarningDiv(true);
     setTimeout(()=>{handleHideWarning()},3000)
@@ -149,7 +147,7 @@ export default function LeftPart() {
             className="ml-2 peer relative h-5 w-5 cursor-pointer check text-center text-white border-black appearance-none rounded-md border transition-all checked:border-ahrom checked:bg-ahrom"
           />
           <span className="text-gray-700 font-medium text-sm">تمام</span>{" "}
-          <button className="mx-1 whitespace-nowrap text-sm antialiased font-medium leading-relaxed text-blue-500 transition-colors hover:text-blue-700 inline-block">
+          <button onClick={()=>handleMarahel('qarardadModal')} className="mx-1 whitespace-nowrap text-sm antialiased font-medium leading-relaxed text-blue-500 transition-colors hover:text-blue-700 inline-block">
             قوانین و شرایط دریافت اعتبار
           </button>{" "}
           <span className="text-gray-700 font-medium text-sm">را می پذیرم </span>

@@ -47,7 +47,7 @@ export default function ModalCodeMeli() {
   }
   return (
     <Modal open={showStatus === "codeMeliModal"}>
-      <div className="flex justify-between rounded-t-lg p-3 dark:bg-navy-800  border-b">
+      <div className=" bg-slate-200 flex justify-between rounded-t-lg p-3 dark:bg-navy-800  border-b">
         <h3 className="text-base  text-slate-700 dark:text-navy-100">
           مرحله ۲ از ۳
         </h3>

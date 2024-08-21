@@ -18,7 +18,7 @@ export default function ModalAddress() {
   return (
     <Modal open={showStatus === "addressModal"}>
       <div id="as_content">
-        <div className="bg-white no-scrollbar border-b flex justify-between py-2 px-4 rounded-t-xl">
+        <div className="bg-slate-200 no-scrollbar border-b flex justify-between py-2 px-4 rounded-t-xl">
           <p>مرحله ۲ از ۳</p>
           <div onClick={handleHide} className="flex items-center">
             <svg

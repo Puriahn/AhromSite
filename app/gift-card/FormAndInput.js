@@ -17,7 +17,6 @@ export default function FormAndInput() {
   function handleCheckBoxClick(){
     setIsActiveCheckBox(!isActiveCheckBox)
   }
-console.log(isActiveCheckBox)
   return (
     <>
       <section className="border rounded-xl">

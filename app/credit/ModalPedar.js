@@ -20,7 +20,7 @@ export default function ModalPedar() {
       <Modal open={showStatus === "pedarModal"}>
         
           <div id="as_content">
-            <div className="bg-white border-b flex justify-between py-2 px-4 rounded-t-xl">
+            <div className="bg-slate-200 border-b flex justify-between py-2 px-4 rounded-t-xl">
               <p>مرحله ۲ از ۳</p>
               <div
                 onClick={handleHide}

@@ -29,14 +29,14 @@ export const ChartComponent = (props) => {
       },
       width: chartContainerRef.current.clientWidth,
       height: 400,
-      grid:{
-        vertLines:false
+      grid: {
+        vertLines: false,
       },
-      rightPriceScale:{
-        borderVisible:false
+      rightPriceScale: {
+        borderVisible: false,
       },
-      timeScale:{
-        borderColor:'#fff'
+      timeScale: {
+        borderColor: "#fff",
       },
       handleScale: {
         axisPressedMouseMove: false,
@@ -52,7 +52,6 @@ export const ChartComponent = (props) => {
       },
     });
     chart.timeScale().fitContent();
-    
 
     const newSeries = chart.addAreaSeries({
       lineColor,
@@ -76,9 +75,14 @@ export const ChartComponent = (props) => {
     areaTopColor,
     areaBottomColor,
   ]);
-  return <div className={`${props.pendingStatus===true?'hidden':'block'}`} ref={chartContainerRef} />;
+  return (
+    <div
+      className={`${props.pendingStatus === true ? "hidden" : "block"}`}
+      ref={chartContainerRef}
+    />
+  );
 };
-
+let y = 1;
 export function Chart(props) {
   const [sandoq, setSandoq] = useState([]);
   const url =
@@ -87,18 +91,17 @@ export function Chart(props) {
     "&interval=" +
     props.time;
   async function Get() {
-    props.pending(true)
+    props.pending(true);
     await axios
       .get(url)
       .then((res) => {
-          props.pending(false)
+        props.pending(false);
         setSandoq(res.data);
       })
       .catch((error) => {
-        console.log("sssssssssssssssssss", error);
+        console.log(error);
       });
   }
-
 
   useEffect(() => {
     Get();
