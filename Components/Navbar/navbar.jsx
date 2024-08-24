@@ -7,13 +7,15 @@ import DropDownSandoq from "./DropDownSandoq";
 import DropDownBishtar from "./DropDownBishtar";
 import SideNav from "./SideNav";
 import Link from "next/link";
+import { useSelector,useDispatch, } from "react-redux";
+import { sandoqActions } from "@/lib/slices/Sandoq";
+import axios from "axios";
 
+let final=''
 
 export default function NavBar() {
-  const path=usePathname()
-  if (path.startsWith('/credit')){
-    return 
-  }
+  const names=useSelector(state=>state.Sandoq.sandoq)
+  const dispatch=useDispatch()
   const [show, setShow] = useState(true);
   const [hideBefore,setIt]=useState(true)
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -56,6 +58,35 @@ export default function NavBar() {
       };
     }
   }, [lastScrollY]);
+  
+  async function Get() {
+    await axios
+      .get("https://ahrominvest.ir/api/dev/cards")
+      .then((res) => {
+        /* if (final===''){ for (var i in res.data) {
+          const item = { [i]: res.data[i] };
+          final = [...final, item];
+        }} to make{{},{},{}} to =>[{},{},{}] */
+       
+        dispatch(sandoqActions.set(res.data))
+        
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+  useEffect(() => {
+    if (names===null){
+      Get()
+    }
+  }, []);
+
+  
+  const path=usePathname()
+  if (path.startsWith('/credit')){
+    return 
+  }
+  
   return (
     <>
       <SideNav menu={mainMenu} setMenu={setMainMenu} />

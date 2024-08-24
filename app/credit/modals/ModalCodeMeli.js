@@ -3,20 +3,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { showActions } from "@/lib/slices/OfCan";
 import { useState } from "react";
+import Modal from "@/Components/Common/Modal";
 
-export default function OfCanCodeMeli() {
+export default function ModalCodeMeli() {
   const showStatus = useSelector((state) => state.Show.showStatus);
   const dispatch = useDispatch();
   const [warningDiv, setWarningDiv] = useState(false);
   const [personData, setPersonData] = useState({
-    codeMeli: null,
-    day: null,
-    month: null,
-    year: null,
+    codeMeli: '',
+    day: "روز",
+    month: "ماه",
+    year: "سال",
   });
-
-  const cssClass =
-    "transform text-green-950 bg-white rounded-xl pb-3 fixed backdrop:backdrop-blur-md bottom-0 left-0 right-0 z-40 w-full px-2 h-fit overflow-y-auto transition-transform duration-300";
 
   function handleHide() {
     dispatch(showActions.status(null));
@@ -31,8 +29,10 @@ export default function OfCanCodeMeli() {
   }
 
   function handleSubmit() {
-    if(personData.codeMeli.length===10&&personData.day&&personData.month&&personData.year){
-      handleMarahel("pedar");
+    if(personData.codeMeli!==''&&personData.day!=="روز"&&personData.month!=="ماه"&&personData.year!=="سال"){
+      if (personData.codeMeli.length===10){
+        handleMarahel("pedarModal")
+      }
     }
     else{handleWarningDiv()}
   }
@@ -44,14 +44,9 @@ export default function OfCanCodeMeli() {
   function handleHideWarning() {
     setWarningDiv(false)
   }
-
   return (
-    <div
-      className={`${
-        showStatus === "codeMeli" ? "translate-y-0 " : "translate-y-full "
-      } ${cssClass}`}
-    >
-      <div className="flex justify-between rounded-t-lg py-3 dark:bg-navy-800  border-b">
+    <Modal open={showStatus === "codeMeliModal"}>
+      <div className=" bg-slate-200 flex justify-between rounded-t-lg p-3 dark:bg-navy-800  border-b">
         <h3 className="text-base  text-slate-700 dark:text-navy-100">
           مرحله ۲ از ۳
         </h3>
@@ -68,7 +63,7 @@ export default function OfCanCodeMeli() {
           </button>
         </div>
       </div>
-      <div className="py-3">
+      <div className="p-3">
         <form
         autoComplete="off"
           data-url="https://ahrominvest.ir/credit/send-otp"
@@ -86,7 +81,7 @@ export default function OfCanCodeMeli() {
               name="national_code"
               id="nationalCode_input_mobile"
               disabled=""
-              className={`border ${warningDiv?'border-rose-500':'border-slate-300'} rounded-lg py-2 px-3 focus:border-ahrom focus:outline-none focus:ring-1 focus:ring-ahrom shadow-sm w-full`}
+              className={`border ${(warningDiv&&personData.codeMeli.length!==10)?'border-rose-500':'border-slate-300'} rounded-lg py-2 px-3 focus:border-ahrom focus:outline-none focus:ring-1 focus:ring-ahrom shadow-sm w-full`}
               type="text"
               placeholder="کد ملی"
             />
@@ -95,10 +90,10 @@ export default function OfCanCodeMeli() {
             <span className="mt-2 block text-base font-light text-gray-600">
               تاریخ تولد
             </span>
-            <div className="flex shadow-sm">
+            <div className="flex shadow-sm gap-1">
               <div
                 id="day_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.day===null&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.day==="روز"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("day", event)}
@@ -156,7 +151,7 @@ export default function OfCanCodeMeli() {
               </div>
               <div
                 id="month_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.month===null&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.month==="ماه"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("month", event)}
@@ -186,7 +181,7 @@ export default function OfCanCodeMeli() {
               </div>
               <div
                 id="year_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.year===null&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.year==="سال"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("year", event)}
@@ -296,7 +291,7 @@ export default function OfCanCodeMeli() {
             </div>
           </div>
           <div className={`${
-              warningDiv ? " block " : " hidden "
+              (warningDiv&&personData.codeMeli.length!==10) ? " block " : " hidden "
             } text-red-500 pt-3 text-sm lg:text-base`}>  کد ملی معتبر نمی باشد.</div>
         </form>
         <div className="flex justify-between mt-5">
@@ -309,6 +304,7 @@ export default function OfCanCodeMeli() {
           </button>
         </div>
       </div>
-    </div>
+
+    </Modal>
   );
 }

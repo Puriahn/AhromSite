@@ -5,7 +5,7 @@ import { Chart } from "./Chart";
 import Table from "./Table";
 import Link from "next/link";
 
-export default function TableAndPishrafte({ param,sandoq }) {
+export default function TableAndPishrafte({ sandoq,param }) {
   const [chartTimeScale, setChartTimeScale] = useState("All");
   const [isPending,setIsPending]=useState(false)
 
@@ -14,7 +14,7 @@ export default function TableAndPishrafte({ param,sandoq }) {
   }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <Table sandoq={sandoq} param={param} />
+      <Table sandoq={sandoq} />
       <div className="relative">
         <div id="parent_chart_zomorod_container" className="mx-3">
           <div className="flex mb-4">

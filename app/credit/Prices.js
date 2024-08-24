@@ -10,7 +10,10 @@ export default function Prices() {
   const dispatch = useDispatch();
   const [warningDiv, setWarningDiv] = useState(false);
   const [width, setWidth] = useState('');
-
+  useEffect(() => {
+    handleResize()
+    window.addEventListener("resize", handleResize);
+  }, [width]);
   function handleWarningDiv() {
     setWarningDiv(true);
     setTimeout(() => {
@@ -60,10 +63,7 @@ export default function Prices() {
     let buttonWidth = (windowWidth-40 - (4 * 16)) / a;
     setWidth(buttonWidth);
   }
-  useEffect(() => {
-    handleResize()
-    window.addEventListener("resize", handleResize);
-  }, [width]);
+  
 
   
   return (

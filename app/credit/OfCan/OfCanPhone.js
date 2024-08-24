@@ -3,7 +3,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { showActions } from "@/lib/slices/OfCan";
 import { useEffect, useState } from "react";
-import Timer from "./Timer";
+import Timer from "../Timer";
 
 export default function OfCanPhone() {
   const showStatus = useSelector((state) => state.Show.showStatus);

@@ -1,10 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import Spinner from "../Common/Spinner";
 
 export default function SideNav({ menu, setMenu }) {
   const [show, setShow] = useState({ sandoq: false, bishtar: false });
+  const [sandoqha, setSandoqha] = useState([]);
+  const names = useSelector((state) => state.Sandoq.sandoq);
+  useEffect(()=>{setSandoqha(names||[])},[names])
 
   function handleShow(identifier) {
     setShow((prevS) => ({ ...prevS, [identifier]: !prevS[identifier] }));
@@ -66,32 +71,32 @@ export default function SideNav({ menu, setMenu }) {
               </div>
               <div
                 id="ul_menu"
-                className={`${!show.sandoq && "hidden "} space-y-4 mt-3`}
+                className={`${!show.sandoq && "hidden "} mt-3`}
               >
-                <Link href="/zomorod" className="block font-medium text-slate-900">
-                  صندوق زمرد
-                </Link>
-                <Link href="/kahroba" className="block font-medium text-slate-900">
-                  صندوق کهربا
-                </Link>
-                <Link href="/yaghot" className="block font-medium text-slate-900">
-                  صندوق یاقوت
-                </Link>
-                <Link href="/almas" className="block font-medium text-slate-900">
-                  صندوق الماس
-                </Link>
-                <Link href="/amitist" className="block font-medium text-slate-900">
-                  صندوق آمیتیست
-                </Link>
-                <Link
-                  href="/tala"
-                  className=" font-medium text-slate-900 flex space-x-2 space-x-reverse"
-                >
-                  <span>صندوق طلا</span>
-                  <span className="text-white text-xs px-1.5 py-0.5 ms-2 font-medium rounded-xl flex items-center">
-                    جدید
-                  </span>
-                </Link>
+                {names !== null ?Object.entries(sandoqha).map(([key, eachItem], index) => {
+          return (
+            <Link 
+              key={key}  
+              href={`/${key}`} 
+              className="block py-2 text-black transition hover:bg-stone-100 rounded-sm px-4"
+            >
+              {key === "tala" && (
+                  <div className='flex'>
+                    <span>صندوق طلا</span>
+                    <span
+                      className="text-white text-xs px-1.5 py-0.5 ms-2 font-medium rounded-xl flex items-center w-fit"
+                      style={{ backgroundColor: "#CEAD44" }}
+                    >
+                      جدید
+                    </span>
+                  </div>
+                )}
+                {key!=='tala'&&<div>صندوق <span>{eachItem.name_fa}</span></div>}
+            </Link>
+          );
+        })
+          :<div className="h-64 pt-24"><Spinner/></div>}
+                
               </div>
             </li>
             <li>

@@ -5,7 +5,7 @@ import MazayayeTarh from "./MazayayeTarh";
 import LeftPart from "./LeftPart";
 import NavEtebar from "./NavEtebar";
 import { showActions } from "@/lib/slices/OfCan";
-import OfCan from "@/app/credit/OfCan";
+import OfCan from "@/app/credit/OfCan/OfCan";
 import { useDispatch,useSelector } from "react-redux";
 
 

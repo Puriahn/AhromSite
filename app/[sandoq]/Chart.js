@@ -82,7 +82,7 @@ export const ChartComponent = (props) => {
     />
   );
 };
-let y = 1;
+
 export function Chart(props) {
   const [sandoq, setSandoq] = useState([]);
   const url =

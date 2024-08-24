@@ -7,8 +7,6 @@ import { showActions } from "@/lib/slices/OfCan";
 export default function LeftPart() {
   const [checkBoxIsActive,setCheckBoxIsActive]=useState(false)
   const [warningDiv, setWarningDiv] = useState(false);
-  
-  const showStatus = useSelector((state) => state.Show.showStatus);
   const dispatch = useDispatch();
 
   const pricee = useSelector((state) => state.EtebarPul.price);

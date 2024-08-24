@@ -10,7 +10,7 @@ const chart = [
   { label: "بازدهی ازابتدا", percent: "start_percentage" },
 ];
 
-export default function Table({ param,sandoq }) {
+export default function Table({ sandoq }) {
   
   function toFarsiNumber(n) {
     const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];

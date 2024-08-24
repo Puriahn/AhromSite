@@ -3,9 +3,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { showActions } from "@/lib/slices/OfCan";
 import { useState } from "react";
-import Modal from "@/Components/Common/Modal";
 
-export default function ModalCodeMeli() {
+export default function OfCanCodeMeli() {
   const showStatus = useSelector((state) => state.Show.showStatus);
   const dispatch = useDispatch();
   const [warningDiv, setWarningDiv] = useState(false);
@@ -16,12 +15,14 @@ export default function ModalCodeMeli() {
     year: "سال",
   });
 
+  const cssClass =
+    "transform text-green-950 bg-white rounded-xl pb-3 fixed backdrop:backdrop-blur-md bottom-0 left-0 right-0 z-40 w-full px-2 h-fit overflow-y-auto transition-transform duration-300";
+
   function handleHide() {
     dispatch(showActions.status(null));
   }
 
   function handleMarahel(marhale) {
-    console.log(marhale)
     dispatch(showActions.status(marhale));
   }
   function handleState(identifier, e) {
@@ -32,7 +33,7 @@ export default function ModalCodeMeli() {
   function handleSubmit() {
     if(personData.codeMeli!==''&&personData.day!=="روز"&&personData.month!=="ماه"&&personData.year!=="سال"){
       if (personData.codeMeli.length===10){
-        handleMarahel("pedarModal")
+        handleMarahel("pedar")
       }
     }
     else{handleWarningDiv()}
@@ -45,9 +46,14 @@ export default function ModalCodeMeli() {
   function handleHideWarning() {
     setWarningDiv(false)
   }
+
   return (
-    <Modal open={showStatus === "codeMeliModal"}>
-      <div className=" bg-slate-200 flex justify-between rounded-t-lg p-3 dark:bg-navy-800  border-b">
+    <div
+      className={`${
+        showStatus === "codeMeli" ? "translate-y-0 " : "translate-y-full "
+      } ${cssClass}`}
+    >
+      <div className="flex justify-between rounded-t-lg py-3 dark:bg-navy-800  border-b">
         <h3 className="text-base  text-slate-700 dark:text-navy-100">
           مرحله ۲ از ۳
         </h3>
@@ -64,7 +70,7 @@ export default function ModalCodeMeli() {
           </button>
         </div>
       </div>
-      <div className="p-3">
+      <div className="py-3">
         <form
         autoComplete="off"
           data-url="https://ahrominvest.ir/credit/send-otp"
@@ -91,10 +97,10 @@ export default function ModalCodeMeli() {
             <span className="mt-2 block text-base font-light text-gray-600">
               تاریخ تولد
             </span>
-            <div className="flex shadow-sm gap-1">
+            <div className="flex shadow-sm">
               <div
                 id="day_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.day==="روز"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.day==='روز'&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("day", event)}
@@ -152,7 +158,7 @@ export default function ModalCodeMeli() {
               </div>
               <div
                 id="month_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.month==="ماه"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.month==='ماه'&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("month", event)}
@@ -182,7 +188,7 @@ export default function ModalCodeMeli() {
               </div>
               <div
                 id="year_container"
-                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.year==="سال"&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
+                className={`relative w-1/3 bg-white rounded-r-lg border  ${personData.year==='سال'&&warningDiv?'border-rose-500':'border-slate-300'} py-2 px-3 text-sm placeholder-slate-400 shadow-sm focus:border-ahrom focus:outline-none`}
               >
                 <select
                   onChange={(event) => handleState("year", event)}
@@ -292,7 +298,7 @@ export default function ModalCodeMeli() {
             </div>
           </div>
           <div className={`${
-              (warningDiv&&personData.codeMeli.length!==10) ? " block " : " hidden "
+              warningDiv ? " block " : " hidden "
             } text-red-500 pt-3 text-sm lg:text-base`}>  کد ملی معتبر نمی باشد.</div>
         </form>
         <div className="flex justify-between mt-5">
@@ -305,7 +311,6 @@ export default function ModalCodeMeli() {
           </button>
         </div>
       </div>
-
-    </Modal>
+    </div>
   );
 }

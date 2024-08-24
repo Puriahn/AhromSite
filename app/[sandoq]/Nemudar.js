@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -6,9 +6,9 @@ import BakshAvalNemudar from "./BakhsAvalNemudar";
 import HeadreNemudar from "./HeaderNemudar";
 import TableAndPishrafte from "./Table&Pishrafte";
 import SoalatMotedavelZomorod from "./SoalatMotedaveZomorod";
+import CirculeChart from "./CirculeChart";
 
-
-export default function Nemudar({name,param,soal}) {
+export default function Nemudar({ name, soal, param }) {
   const [sandoq, setsandoq] = useState();
   async function Get() {
     await axios
@@ -28,25 +28,16 @@ export default function Nemudar({name,param,soal}) {
     }, 60000);
     return () => clearInterval(interval);
   }, []);
-       
 
   return (
     <>
       <section className="mx-auto max-w-5xl px-6 pt-20 sm:px-8 lg:pt-24">
-        <HeadreNemudar name={name}/>
-        <BakshAvalNemudar sandoq={sandoq} param={param}/>
-        <TableAndPishrafte sandoq={sandoq} param={param}/>
+        <HeadreNemudar name={name} />
+        <BakshAvalNemudar sandoq={sandoq} />
+        <TableAndPishrafte sandoq={sandoq} param={param} />
       </section>
 
-      <section className="mx-auto max-w-5xl py-5 flex justify-center">
-        <div className="relative w-full h-[200px] sm:h-[300px] lg:h-[500px]">
-          <div
-            id="detailChart"
-            className="DetailChart w-full h-full absolute"
-            dir="ltr"
-          ></div>
-        </div>
-      </section>
+      <CirculeChart/>
       <SoalatMotedavelZomorod
         percent={sandoq}
         soal={soal}

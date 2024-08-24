@@ -3,7 +3,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { showActions } from "@/lib/slices/OfCan";
 import {  useState } from "react";
-import Timer from "./Timer";
+import Timer from "../Timer";
 import Modal from "@/Components/Common/Modal";
 
 export default function ModalPhone() {

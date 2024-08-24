@@ -73,7 +73,7 @@ const chart = [
   },
 ];
 
-export default function BakshAvalNemudar({ param,sandoq }) {
+export default function BakshAvalNemudar({ sandoq }) {
   
 
   function toFarsiNumber(n) {
