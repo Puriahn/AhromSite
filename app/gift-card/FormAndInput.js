@@ -121,7 +121,7 @@ export default function FormAndInput() {
                   id="image"
                   className="rounded-lg w-full"
                   alt=""
-                  src={data[drawing - 1].src}
+                  src={data[drawing - 1].src+(price/1000)+'.jpg'}
                 />
               </div>
               <div className="space-y-1 mt-3">

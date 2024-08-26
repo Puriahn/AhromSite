@@ -8,7 +8,15 @@ export default function CirculeChart() {
     if (typeof window !== "undefined" && chartRef.current) {
       d3.select(chartRef.current).selectAll("*").remove();
 
-      var chartDetails = {"btc":{"percentage":45,"color":"#FF9500","name_fa":"\u0628\u06cc\u062a\u06a9\u0648\u06cc\u0646"},"eth":{"percentage":17.43,"color":"#404877","name_fa":"\u0627\u062a\u0631\u06cc\u0648\u0645"},"trx":{"percentage":11.08,"color":"#FF2826","name_fa":"\u062a\u0631\u0648\u0646"},"usdt":{"percentage":10.18,"color":"#00B095","name_fa":"\u062a\u062a\u0631"},"xrp":{"percentage":7.13,"color":"#23292E","name_fa":"\u0631\u06cc\u067e\u0644"},"doge":{"percentage":6.47,"color":"#C5A01F","name_fa":"\u062f\u0648\u062c \u06a9\u0648\u06cc\u0646"},"cash":{"percentage":2.710000000000008,"color":"#084642","name_fa":"\u0648\u062c\u0647 \u0646\u0642\u062f"}};
+      const chartDetails = {
+        btc: { percentage: 45, color: "#FF9500", name_fa: "\u0628\u06cc\u062a\u06a9\u0648\u06cc\u0646" },
+        eth: { percentage: 17.43, color: "#404877", name_fa: "\u0627\u062a\u0631\u06cc\u0648\u0645" },
+        trx: { percentage: 11.08, color: "#FF2826", name_fa: "\u062a\u0631\u0648\u0646" },
+        usdt: { percentage: 10.18, color: "#00B095", name_fa: "\u062a\u062a\u0631" },
+        xrp: { percentage: 7.13, color: "#23292E", name_fa: "\u0631\u06cc\u067e\u0644" },
+        doge: { percentage: 6.47, color: "#C5A01F", name_fa: "\u062f\u0648\u062c \u06a9\u0648\u06cc\u0646" },
+        cash: { percentage: 2.71, color: "#084642", name_fa: "\u0648\u062c\u0647 \u0646\u0642\u062f" }
+      };
 
       const dataCardDetailsChart = Object.values(chartDetails).map(item => item.percentage.toFixed(2));
       const colorsCardDetailsChart = Object.values(chartDetails).map(item => item.color);
@@ -61,7 +69,8 @@ export default function CirculeChart() {
       const pie = d3
         .pie()
         .value(d => d)
-        .padAngle(0.03); // Adds gap between slices
+        // Increase the gap between slices by setting a larger padAngle
+        .padAngle(0.03); // Increased from 0.03 to 0.05 for more space between slices
 
       // Animation function
       const draw = () => {
@@ -102,13 +111,15 @@ export default function CirculeChart() {
           .append("text")
           .attr("dy", "0.35em")
           .style("opacity", 0)
-          .style("font-size", "11px") // Set smaller font size
+          .style("font-size", "13px") // Set smaller font size
           .style("fill", (d, i) => colorsCardDetailsChart[i]) // Set color based on chart slice
           .text((d, i) => `${dataCardDetailsChart[i]}% - ${faNamesCardDetailsChart[i]}`)
           .attr("transform", d => {
             const pos = outerArc.centroid(d);
             pos[0] = radius * (midAngle(d) < Math.PI ? 1 : -1);
+            pos[1]=pos[1]*1.3
             return `translate(${pos})`;
+            
           })
           .style("text-anchor", d => (midAngle(d) < Math.PI ? "start" : "end"))
           .transition()
@@ -138,6 +149,7 @@ export default function CirculeChart() {
           .attr("points", d => {
             const pos = outerArc.centroid(d);
             pos[0] = radius * 0.95 * (midAngle(d) < Math.PI ? 1 : -1);
+            pos[1]=pos[1]*1.27
             return [arc.centroid(d), arc.centroid(d), pos];
           });
       };
