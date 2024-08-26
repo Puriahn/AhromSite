@@ -5,7 +5,7 @@ import axios from "axios";
 import BakshAvalNemudar from "./BakhsAvalNemudar";
 import HeadreNemudar from "./HeaderNemudar";
 import TableAndPishrafte from "./Table&Pishrafte";
-import SoalatMotedavelZomorod from "./SoalatMotedaveZomorod";
+import SoalatMotedavelZomorod from "../SoalatMotedaveZomorod";
 import CirculeChart from "./CirculeChart";
 
 export default function Nemudar({ name, soal, param }) {
@@ -37,7 +37,7 @@ export default function Nemudar({ name, soal, param }) {
         <TableAndPishrafte sandoq={sandoq} param={param} />
       </section>
 
-      <CirculeChart/>
+      <CirculeChart /> 
       <SoalatMotedavelZomorod
         percent={sandoq}
         soal={soal}
