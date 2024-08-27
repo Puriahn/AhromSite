@@ -8,6 +8,8 @@ import Link from "next/link";
 export default function TableAndPishrafte({ sandoq,param }) {
   const [chartTimeScale, setChartTimeScale] = useState("All");
   const [isPending,setIsPending]=useState(false)
+  
+  
 
   function handleTime(identifier){
     setChartTimeScale(identifier)

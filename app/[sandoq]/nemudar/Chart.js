@@ -91,7 +91,11 @@ export function Chart(props) {
     "&interval=" +
     props.time;
   async function Get() {
-    props.pending(true);
+    if(sandoq.length===0){
+
+      props.pending(true);
+
+    }
     await axios
       .get(url)
       .then((res) => {
@@ -110,6 +114,6 @@ export function Chart(props) {
     }, 60000);
     return () => clearInterval(interval);
   }, []);
-
+ 
   return <ChartComponent {...props} data={sandoq}></ChartComponent>;
 }

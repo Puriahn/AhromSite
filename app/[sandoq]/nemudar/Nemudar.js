@@ -37,7 +37,7 @@ export default function Nemudar({ name, soal, param }) {
         <TableAndPishrafte sandoq={sandoq} param={param} />
       </section>
 
-      <CirculeChart /> 
+      <CirculeChart />
       <SoalatMotedavelZomorod
         percent={sandoq}
         soal={soal}

@@ -4,13 +4,14 @@ import Link from "next/link";
 
 export default function App() {
     let deviceType='both'
+    if (typeof window !== 'undefined') {
     if (navigator.userAgent.match(/Android/i)){
         deviceType='android'
     }
     else if (navigator.userAgent.match(/iPhone/i)){
         deviceType='iphone'
     }
-    
+  }
     
   return (
     <>
