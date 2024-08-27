@@ -4,6 +4,8 @@ import qeymatha from "./prices.json";
 import { etebarActions } from "./../../lib/slices/Etebar";
 import { useEffect, useState } from "react";
 import Month from "./Month";
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
+
 
 export default function Prices() {
   const pricee = useSelector((state) => state.EtebarPul.price);
@@ -24,10 +26,7 @@ export default function Prices() {
     setWarningDiv(false);
   }
 
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
+  
 
   function handlePrice(price) {
     dispatch(etebarActions.price(price));

@@ -1,4 +1,5 @@
 import Spinner from "@/Components/Common/Spinner";
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
 
 const chart = [
   { label: "بازدهی امروز", percent: "1day_percentage_24h" },
@@ -11,12 +12,6 @@ const chart = [
 ];
 
 export default function Table({ sandoq }) {
-  
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
-
   function hazfManfi(x) {
     if (x[0] == "-") {
       return x.slice(1);

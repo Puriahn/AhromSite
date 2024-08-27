@@ -1,5 +1,5 @@
 import Spinner from "@/Components/Common/Spinner";
-
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
 const chart = [
   {
     label: "قیمت خرید",
@@ -73,11 +73,7 @@ const chart = [
 
 export default function BakshAvalNemudar({ sandoq }) {
   
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
-
+  
   return (
     <div className="my-2 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:my-8">
       {chart.map((item) => (

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
 
 export default function SoalatMotedavelZomorod({ soal, name,percent }) {
   const data = [
@@ -62,10 +63,7 @@ export default function SoalatMotedavelZomorod({ soal, name,percent }) {
       });
   }
 
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
+  
   
   return (
     <div

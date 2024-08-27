@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { giftActions } from "@/lib/slices/GiftCard";
 import qeymatha from "./prices.json";
 import { useEffect,useState } from "react";
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
+
 
 export default function Prices() {
   const pricee=useSelector(state=>state.GiftCard.price)
@@ -14,10 +16,6 @@ export default function Prices() {
     dispatch(giftActions.price(price));
   }
 
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
   function handleResize() {
     let windowWidth = window.innerWidth;
     if (window.innerWidth >= 1024) return;
@@ -83,4 +81,4 @@ export default function Prices() {
     </section>
   );
 }
-//for rmoving comma replace(/[.,،]/g, "")
+

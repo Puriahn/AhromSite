@@ -3,6 +3,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { showActions } from "@/lib/slices/OfCan";
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
 
 export default function LeftPart() {
   const [checkBoxIsActive,setCheckBoxIsActive]=useState(false)
@@ -13,10 +14,7 @@ export default function LeftPart() {
   const month = useSelector((state) => state.EtebarPul.month);
   const x=Math.ceil((pricee/month)/1000)
 
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
+  
 
   
   function handleWarningDiv() {

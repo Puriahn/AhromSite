@@ -3,6 +3,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { showActions } from "@/lib/slices/OfCan";
 import { useState } from "react";
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
 
 export default function OfCanEtelaat() {
   const showStatus = useSelector((state) => state.Show.showStatus);
@@ -18,10 +19,7 @@ export default function OfCanEtelaat() {
   const cssClass =
     "transform text-green-950 bg-white rounded-xl pb-3 fixed backdrop:backdrop-blur-md bottom-0 left-0 right-0 z-40 w-full px-2 h-fit overflow-y-auto transition-transform duration-300";
 
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
+ 
 
   function handleHide() {
     dispatch(showActions.status(null));

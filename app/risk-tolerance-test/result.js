@@ -2,21 +2,14 @@
 
 import Link from "next/link";
 import { useEffect } from "react";
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
 
 export default function Result({ data }) {
   let res = data.map((a) => a.value);
   var result = res.reduce(function (prev, curr) {
     return (Number(prev) || 0) + (Number(curr) || 0);
   });
-
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
-
-
   result = result / 18;
-
   let color = "";
   var riskcal;
   var index;

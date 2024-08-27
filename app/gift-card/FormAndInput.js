@@ -2,17 +2,13 @@
 import { useState } from "react";
 import { data } from "./imageData";
 import { useSelector } from "react-redux";
+import toFarsiNumber from "@/Components/utils/ToFarsiNumber";
 
 export default function FormAndInput() {
   const [totalPrice, setTotalPrice] = useState();
   const [isActiveCheckBox, setIsActiveCheckBox] = useState(false);
   const drawing = useSelector((state) => state.GiftCard.drawing);
   const price = useSelector((state) => state.GiftCard.price);
-
-  function toFarsiNumber(n) {
-    const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-    return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
-  }
 
   function handleCheckBoxClick(){
     setIsActiveCheckBox(!isActiveCheckBox)
